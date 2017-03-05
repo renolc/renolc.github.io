@@ -1,0 +1,106 @@
+/* highlight.js */
+
+.hljs-comment,.hljs-quote{color:#8e908c}.hljs-variable,.hljs-template-variable,.hljs-tag,.hljs-name,.hljs-selector-id,.hljs-selector-class,.hljs-regexp,.hljs-deletion{color:#c82829}.hljs-number,.hljs-built_in,.hljs-builtin-name,.hljs-literal,.hljs-type,.hljs-params,.hljs-meta,.hljs-link{color:#f5871f}.hljs-attribute{color:#eab700}.hljs-string,.hljs-symbol,.hljs-bullet,.hljs-addition{color:#718c00}.hljs-title,.hljs-section{color:#4271ae}.hljs-keyword,.hljs-selector-tag{color:#8959a8}.hljs{display:block;overflow-x:auto;background:white;color:#4d4d4c;padding:0.5em}.hljs-emphasis{font-style:italic}.hljs-strong{font-weight:bold}
+
+/* app */
+
+.hljs {
+  background: #fafafa;
+  border-bottom: 2px solid #e5e5e5;
+  border-left: 3px solid #69c;
+  padding: 15px;
+}
+
+* {
+  transition: 200ms all;
+}
+
+a {
+  color: #69c;
+}
+
+body {
+  font-family: sans-serif;
+  color: #333;
+  background: #efefef;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.item {
+  display: block;
+  padding: 10px 10px;
+  border-radius: 2px;
+  text-decoration: none;
+  border-bottom: 1px solid lightgray;
+  color: #333;
+}
+
+.item h3,
+.item p {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.item:hover {
+  box-shadow: inset 1px 1px 5px gray;
+}
+
+.content {
+  max-width: 900px;
+  min-height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-left: 1px solid #bebebe;
+  border-right: 1px solid #bebebe;
+  padding: 50px;
+  background: white;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.title a {
+  text-decoration: none;
+  color: #333;
+}
+
+.btn {
+  text-decoration: none;
+  border: 1px solid lightgray;
+  padding: 10px 30px;
+  border-radius: 3px;
+  color: black;
+  font-weight: bold;
+  max-width: 48%;
+  box-sizing: border-box;
+  display: block;
+  margin-top: 50px;
+}
+
+.btn:hover {
+  box-shadow: inset 1px 1px 5px gray;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.center {
+  text-align: center;
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 500px) {
+  .content {
+    padding: 50px 25px;
+  }
+
+  .btn {
+    text-align: center;
+    max-width: unset;
+  }
+}
