@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <title>renolc - Introducing: chalk-blog</title>
+</head>
+
+<body>
+  <div class="content">
+    <h1 class="title"><a href="../">renolc</a></h1>
+    <h1>Introducing: chalk-blog</h1>
+<p>For the past few months I've started having ideas for blog articles I wanted to write. Not having an actual blog made that somewhat difficult, so naturally, that led into how I could develop my own blogging system...</p>
+<p>I knew I wanted to be able to host the blog statically, and I only have a few requirements, so it should be easy, right? Well, the go-to solution for that would probably be <a href="https://jekyllrb.com">jekyll</a>. Jekyll is amazing, but honestly, way too much for my needs. I'm sure I could have found something else that would have worked well, but I like making things so, here I am.</p>
+<p>My requirements were fairly simple:</p>
+<ul>
+<li>it had to allow me to write my posts in markdown</li>
+<li>it had to support syntax highlighting for code snippets</li>
+<li>it had to be hostable on GitHub Pages (because freeeee)</li>
+</ul>
+<p>With those in mind, I began working on <a href="https://github.com/renolc/chalk">chalk-blog</a>.</p>
+<p>I decided to go with a CLI app written in Node. Mostly, because I like Node, and I have been wanting to learn the basics of making CLI apps in it and this seemed like the perfect excuse. That eventually led me down a rabbit hole of interesting side projects which I will probably blog about later, but for now, lets talk about <code>chalk-blog</code>:</p>
+<pre class="hljs"><code><span class="hljs-comment"># install the `chalk` binary</span>
+npm i chalk-blog -g
+
+mkdir my-blog
+<span class="hljs-built_in">cd</span> my-blog
+
+<span class="hljs-comment"># create a skeleton blog and setup git</span>
+chalk init git@my.repo.url/.git
+
+<span class="hljs-comment"># create and open a new md file</span>
+chalk new First Post
+
+<span class="hljs-comment"># build and publish local changes</span>
+chalk publish
+</code></pre>
+<p>And that's about it. Simplicity is what I was going for, since I didn't have too many features to worry about. Heck, in my first version, the HTML was even hardcoded into the code itself.</p>
+<p>Thankfully, I decided to iterate until it slightly more flexible. Now, after a <code>chalk init</code>, it will copy over some template files which are completely customizable. After altering the HTML and CSS, a simple <code>chalk publish</code> will update all your posts and push to your remote repo.</p>
+<p>I will probably keep iterating over this project as I find I have a need for specific features in the future, but for now it works and I can start thinking about the blog content a little more, and the blog tooling a little less... at least, theoretically. I kind of like thinking about/working on the tooling, so I'm sure I'll find some excuse in the future to ignore my blog for the sake of building out better blogging apps instead.</p>
+
+    <a class="btn left" href="./2nd-post-same-as-the-first">&leftarrow; 2nd Post, Same as the First</a>
+    
+  </div>
+</body>
+
+</html>

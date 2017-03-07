@@ -5,7 +5,7 @@ This is the first post of my new blog. It's mostly for testing and style tweakin
 Here's some code:
 
 ```js
-const fit = (n) => {
+const fib = (n) => {
   if (n <= 0) return 0
   if (n === 1 || n === 2) return 1
   return fib(n-1) + fib(n-2)
