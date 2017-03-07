@@ -32,6 +32,6 @@ chalk publish
 
 And that's about it. Simplicity is what I was going for, since I didn't have too many features to worry about. Heck, in my first version, the HTML was even hardcoded.
 
-Thankfully, I decided to iterate until it slightly more flexible. Now, after a `chalk init`, it will copy over some template files which are completely customizable. After altering the HTML and CSS, a simple `chalk publish` will update all your posts and push to your remote repo.
+Thankfully, I decided to iterate until it was slightly more flexible. Now, after a `chalk init`, it will copy over some template files which are completely customizable. After altering the HTML and CSS, a simple `chalk publish` will update all your posts and push to your remote repo.
 
 I will probably keep iterating over this project as I find I have a need for specific features in the future, but for now it works and I can start thinking about the blog content a little more, and the blog tooling a little less... at least, theoretically. I kind of like thinking about/working on the tooling, so I'm sure I'll find some excuse in the future to ignore my blog for the sake of building out better blogging apps instead.
