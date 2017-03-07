@@ -30,7 +30,7 @@ chalk new First Post
 chalk publish
 ```
 
-And that's about it. Simplicity is what I was going for, since I didn't have too many features to worry about. Heck, in my first version, the HTML was even hardcoded into the code itself.
+And that's about it. Simplicity is what I was going for, since I didn't have too many features to worry about. Heck, in my first version, the HTML was even hardcoded.
 
 Thankfully, I decided to iterate until it slightly more flexible. Now, after a `chalk init`, it will copy over some template files which are completely customizable. After altering the HTML and CSS, a simple `chalk publish` will update all your posts and push to your remote repo.
 
