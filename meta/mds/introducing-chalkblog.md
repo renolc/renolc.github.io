@@ -5,9 +5,9 @@ For the past few months I've started having ideas for blog articles I wanted to 
 I knew I wanted to be able to host the blog statically, and I only have a few requirements, so it should be easy, right? Well, the go-to solution for that would probably be [jekyll](https://jekyllrb.com). Jekyll is amazing, but honestly, way too much for my needs. I'm sure I could have found something else that would have worked well, but I like making things so, here I am.
 
 My requirements were fairly simple:
-- it had to allow me to write my posts in markdown
-- it had to support syntax highlighting for code snippets
-- it had to be hostable on GitHub Pages (because freeeee)
+- allow me to write my posts in markdown
+- support syntax highlighting for code snippets
+- be hostable on GitHub Pages (because freeeee)
 
 With those in mind, I began working on [chalk-blog](https://github.com/renolc/chalk).
 
