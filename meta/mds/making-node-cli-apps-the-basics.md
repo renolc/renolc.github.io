@@ -1,6 +1,6 @@
 # Making Node CLI Apps: The Basics
 
-Node is actually a pretty good choice when you want to make a command line application. On my journey to create [`chalk-blog`](./introducing-chalkblog), I had to research some of these basics and figured I would consolidate them into a single blog for posterity.
+Node is actually a pretty good choice when you want to make a command line application. On my journey to create [`chalk-blog`](https://renolc.github.io/posts/introducing-chalkblog), I had to research some of these basics and figured I would consolidate them into a single blog for posterity.
 
 ## Why make CLI apps?
 
