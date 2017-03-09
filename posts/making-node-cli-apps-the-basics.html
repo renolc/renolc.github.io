@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <title>renolc - Making Node CLI Apps: The Basics</title>
+</head>
+
+<body>
+  <div class="content">
+    <h1 class="title"><a href="../">renolc</a></h1>
+    <h1>Making Node CLI Apps: The Basics</h1>
+<p>Node is actually a pretty good choice when you want to make a command line application. On my journey to create <a href="./introducing-chalkblog"><code>chalk-blog</code></a>, I had to research some of these basics and figured I would consolidate them into a single blog for posterity.</p>
+<h2>Why make CLI apps?</h2>
+<p>First, why would you consider making a CLI app? A few scenarios where this might make sense:</p>
+<ul>
+<li>your job requires you to occasionally do some repetitious work on irregular intervals</li>
+<li>you have some scripts you occasionally run and might want to share them with others</li>
+<li>just because</li>
+</ul>
+<h2>Why node?</h2>
+<p>Why should you consider node for your runtime?</p>
+<ul>
+<li>JavaScript is incredibly flexible</li>
+<li>there are <a href="http://www.modulecounts.com">hundreds of thousands of packages</a> to help bootstrap your code</li>
+<li><code>npm</code> has made it easy on us with some useful commands</li>
+<li>likewise, <code>npm</code> is great for distributing and updating your app</li>
+<li>just because</li>
+</ul>
+<h2>How to do the thing?</h2>
+<p>Ok, lets do this.</p>
+<h3>1. <code>package.json</code></h3>
+<p>The first step is to update your <code>package.json</code> file to let <code>npm</code> know you will want to include an executable file in your package.</p>
+<pre class="hljs"><code><span class="hljs-comment">// package.json</span>
+{
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"my-app"</span>,
+  <span class="hljs-string">"bin"</span>: <span class="hljs-string">"./index.js"</span>
+}
+</code></pre>
+<p>By simply including the <code>&quot;bin&quot;</code> property and pointing it to a <code>.js</code> file, <code>npm</code> will automatically install that file where necessary upon install. So you don't have to worry about ensuring the file ends up in some folder available in the <code>PATH</code>. You can just tell people to <code>npm i my-app -g</code> as normal and, ta-da, it's available to them!</p>
+<p>The binary name will default to the name of your package, so in this case, it would install a <code>my-app</code> command. For this reason, you should take caution when naming your package. If you give it a name of a command already available, the <code>npm i</code> might fail.</p>
+<p>If you want to name the installed command something other than your package name, or if you want to install more than one command within the same package, there is an alternative setup available:</p>
+<pre class="hljs"><code><span class="hljs-comment">// package.json</span>
+{
+  <span class="hljs-string">"name"</span>: <span class="hljs-string">"my-app"</span>,
+  <span class="hljs-string">"bin"</span>: {
+    <span class="hljs-string">"my-command"</span>: <span class="hljs-string">"./command.js"</span>,
+    <span class="hljs-string">"my-other-command"</span>: <span class="hljs-string">"./other.js"</span>
+  }
+}
+</code></pre>
+<p>This version will create multiple commands that are named whatever key you give them. So in this case, you will create a <code>my-command</code> and <code>my-other-command</code> executable. This can be very useful if you have multiple scripts that may be different enough to warrant placing them in their own commands, but related enough that they should be package together. Now anyone can install or update them all with just one <code>npm i</code> command!</p>
+<h3>2. <code>#!/usr/bin/env node</code></h3>
+<p>Sadly, you can't really just put JavaScript code in your <code>.js</code> file, point at it with <code>&quot;bin&quot;</code> and expect everything to work out dandy. First you need to include the <code>#!/usr/bin/env node</code> header at the top of your script to ensure it runs under the correct context.</p>
+<p>If you've ever written a bash script, you may be familiar with the <code>#!/usr/bin/bash</code> header. This is the same thing, only it points to whatever node version the user currently has on their system.</p>
+<p>If you're not familiar with headers like this, the long and short of it is, you are essentially just making an alias command that points directly to your <code>.js</code> file. This means, running your command isn't really any different than just trying to execute the <code>.js</code> file directly. If you try this without the correct header, it will default to assuming your file is a bash script and then complain upon the first instance of unfamiliar syntax (which will probably be fairly quickly since JavaScript and bash are pretty different). By declaring the header, it will tell the OS that this is a node script specifically and that it should be executed with that runtime.</p>
+<h3>3. <code>process.argv</code></h3>
+<p>You'll probably want your command to handle some sort of input. This is most commonly done through command line arguments. In node, you access the command line arguments through the <code>process.argv</code> property.</p>
+<p>Something to consider is the first two values of <code>process.argv</code> will always point to the path of the node binary and the path of the executing script, respectively. So if your script does something like this:</p>
+<pre class="hljs"><code><span class="hljs-meta">#!/usr/bin/env node</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'process.argv:'</span>, process.argv)
+</code></pre>
+<p>you could expect the output to look like this:</p>
+<pre class="hljs"><code>$ my-app hello world
+process.argv: [ <span class="hljs-string">'/usr/local/bin/node'</span>,
+  <span class="hljs-string">'/path/to/your/index.js'</span>,
+  <span class="hljs-string">'hello'</span>,
+  <span class="hljs-string">'world'</span> ]
+</code></pre>
+<p>You probably don't care about those paths, so you can easily <code>.slice</code> them off the front of the array:</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> args = process.argv.slice(<span class="hljs-number">2</span>)
+</code></pre>
+<h3>4. <code>npm link</code></h3>
+<p>How should you test your app? If you're as naive as me, you might originally think:</p>
+<ol>
+<li>code code code</li>
+<li><code>npm publish</code> a version of your app</li>
+<li><code>npm i -g</code> your app</li>
+<li>test test test</li>
+<li>goto step 1</li>
+</ol>
+<p>This is, of course, slow, tedious, and overall not a very good time. Anyone who bothers reading the docs (or blog posts) will tell you to just <code>npm link</code> while inside your project directory.</p>
+<p>The <code>link</code> command will have <code>npm</code> symlink your app into your <code>PATH</code>, just like if you installed it. The major difference (besides not having to publish) is it links directly to the version of your code you are developing on. This is incredibly convenient, because now any changes you make to your code will be instantly available to your linked command. Your dev cycle now becomes:</p>
+<ol>
+<li>code code code</li>
+<li><code>npm link</code></li>
+<li>test test test</li>
+<li>update your code as necessary</li>
+<li>go to step 3</li>
+</ol>
+<p>Once you are done, you can <code>npm unlink</code> to clean up the symlink.</p>
+<h3>5. Other random tidbits</h3>
+<ul>
+<li>
+<p><code>__dirname</code> will point to the path of the script file currently executing. If you want the path the user is currently in, use <code>process.env.PWD</code>.</p>
+</li>
+<li>
+<p><code>child_process</code> will have a lot of good options for executing commands outside of node itself. <code>exec</code> is probably the easiest to get started with. Check out the <a href="https://nodejs.org/api/child_process.html">docs</a> for help.</p>
+</li>
+<li>
+<p>There are a lot of packages out there to help you with the tedious parts of setting up CLI apps (mostly around argument or flag parsing). A few I would recommend: <a href="https://www.npmjs.com/package/commander"><code>commander.js</code></a>, <a href="https://www.npmjs.com/package/yargs"><code>yargs</code></a>, and <a href="https://www.npmjs.com/package/ezcli"><code>ezcli</code></a> (full disclosure, I created <code>ezcli</code>).</p>
+</li>
+</ul>
+<h2>Summary</h2>
+<p>It turns out node is quite capable at making CLI apps. <code>npm</code> has made this super easy with various conveniences, the community has provided us with a plethora of packages we could utilize, and JavaScript itself is a rapidly advancing language with many modern features. If you find yourself writing any scripts to do some rote tasks over and over again, I would highly recommend considering formalizing your code into a reusable command line application. This is what I have started doing for my own projects, both personal and professional, and let me tell you, it's a lot better than having those scripts just laying around my computer somewhere.</p>
+
+    <a class="btn left" href="./introducing-chalkblog">&leftarrow; Introducing: chalk-blog</a>
+    
+  </div>
+</body>
+
+</html>
