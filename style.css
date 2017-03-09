@@ -98,5 +98,7 @@ body {
   .btn {
     text-align: center;
     max-width: unset;
+    width: 100%;
+    margin-top: 30px;
   }
 }
