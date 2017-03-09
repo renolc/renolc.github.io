@@ -42,10 +42,6 @@ body {
   margin-bottom: 5px;
 }
 
-.item:hover {
-  box-shadow: inset 1px 1px 5px gray;
-}
-
 .content {
   max-width: 900px;
   min-height: 100vh;
