@@ -27,6 +27,20 @@ body {
   line-height: 1.4;
 }
 
+.content {
+  max-width: 900px;
+  min-height: 100vh;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border-left: 1px solid #bebebe;
+  border-right: 1px solid #bebebe;
+  padding: 50px;
+  background: white;
+  box-sizing: border-box;
+  overflow: auto;
+  position: relative;
+}
+
 .item {
   display: block;
   padding: 10px 10px;
@@ -52,17 +66,46 @@ body {
   margin-bottom: 5px;
 }
 
-.content {
-  max-width: 900px;
-  min-height: 100vh;
-  margin: 0 auto;
-  box-sizing: border-box;
-  border-left: 1px solid #bebebe;
-  border-right: 1px solid #bebebe;
-  padding: 50px;
-  background: white;
-  box-sizing: border-box;
-  overflow: auto;
+.links {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: default;
+  height: 25px;
+}
+
+.icon-container {
+  margin: 0;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+
+.icon-desc {
+  opacity: 0;
+  float: right;
+  background-color: #333;
+  color: white;
+  padding: 3px 10px;
+  border-radius: 19880213px;
+}
+
+.icon {
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+.icon:hover {
+  opacity: 1;
+}
+
+.icon-link:hover ~ .icon-desc {
+  opacity: 1;
 }
 
 .title a {
@@ -103,6 +146,28 @@ body {
 @media only screen and (max-width: 500px) {
   .content {
     padding: 20px;
+  }
+
+  .links {
+    position: unset;
+    top: unset;
+    left: unset;
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .icon-container {
+    margin: 0 10px;
+  }
+
+  .icon {
+    opacity: 0.7;
+  }
+
+  .right,
+  .left {
+    float: none;
   }
 
   .btn {
