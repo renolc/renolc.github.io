@@ -1,4 +1,5 @@
 # Making Node CLI Apps: The Basics
+## Wed Mar 08 2017
 
 Node is actually a pretty good choice when you want to make a command line application. On my journey to create [`chalk-blog`](https://renolc.github.io/posts/introducing-chalkblog), I had to research some of these basics and figured I would consolidate them into a single blog for posterity.
 
@@ -67,7 +68,7 @@ If you're not familiar with headers like this, the long and short of it is, you 
 
 You'll probably want your command to handle some sort of input. This is most commonly done through command line arguments. In node, you access the command line arguments through the `process.argv` property.
 
-Something to consider is the first two values of `process.argv` will always point to the path of the node binary and the path of the executing script, respectively. So if your script does something like this: 
+Something to consider is the first two values of `process.argv` will always point to the path of the node binary and the path of the executing script, respectively. So if your script does something like this:
 
 ```js
 #!/usr/bin/env node

@@ -1,4 +1,5 @@
 # Introducing: chalk-blog
+## Mon Mar 06 2017
 
 For the past few months I've started having ideas for blog articles I wanted to write. Not having an actual blog made that somewhat difficult, so naturally, that led into how I could develop my own blogging system...
 
