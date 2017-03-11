@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../style.css">
+  <title>renolc - Unraveling Promises</title>
+</head>
+
+<body>
+  <div class="content">
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <symbol id="icon-twitter-square" viewBox="0 0 24 28">
+          <title>twitter-square</title>
+          <path d="M20 9.531c-0.594 0.266-1.219 0.438-1.891 0.531 0.688-0.406 1.203-1.062 1.453-1.828-0.641 0.375-1.344 0.656-2.094 0.797-0.594-0.641-1.453-1.031-2.391-1.031-1.813 0-3.281 1.469-3.281 3.281 0 0.25 0.016 0.516 0.078 0.75-2.734-0.141-5.156-1.437-6.781-3.437-0.281 0.484-0.453 1.062-0.453 1.656 0 1.141 0.531 2.141 1.422 2.734-0.547-0.016-1.062-0.172-1.563-0.406v0.031c0 1.594 1.203 2.922 2.703 3.219-0.281 0.078-0.5 0.125-0.797 0.125-0.203 0-0.406-0.031-0.609-0.063 0.422 1.297 1.625 2.25 3.063 2.281-1.125 0.875-2.531 1.406-4.078 1.406-0.266 0-0.531-0.016-0.781-0.047 1.453 0.922 3.172 1.469 5.031 1.469 6.031 0 9.344-5 9.344-9.344 0-0.141 0-0.281-0.016-0.422 0.641-0.453 1.203-1.031 1.641-1.703zM24 6.5v15c0 2.484-2.016 4.5-4.5 4.5h-15c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5h15c2.484 0 4.5 2.016 4.5 4.5z"></path>
+        </symbol>
+        <symbol id="icon-github-square" viewBox="0 0 24 28">
+          <title>github-square</title>
+          <path d="M8.109 18.75v0c0.031-0.047 0.016-0.141-0.047-0.203-0.078-0.063-0.172-0.078-0.219-0.031-0.031 0.047-0.016 0.141 0.047 0.203 0.078 0.063 0.172 0.078 0.219 0.031zM7.672 18.109c-0.047-0.063-0.125-0.094-0.187-0.063-0.047 0.031-0.047 0.125 0 0.187 0.063 0.078 0.141 0.109 0.187 0.078v0c0.047-0.031 0.047-0.125 0-0.203zM7.031 17.484v0c0.016-0.031-0.016-0.094-0.078-0.125-0.047-0.016-0.109-0.016-0.125 0.031-0.031 0.047 0 0.094 0.063 0.125 0.063 0.016 0.125 0.016 0.141-0.031zM7.359 17.844v0c0.031-0.031 0.031-0.109-0.031-0.156-0.047-0.063-0.125-0.078-0.156-0.047-0.047 0.047-0.031 0.109 0.016 0.172 0.047 0.047 0.125 0.078 0.172 0.031zM8.703 19.016v0c0.016-0.063-0.047-0.141-0.141-0.172s-0.172 0-0.203 0.063c-0.016 0.063 0.047 0.141 0.141 0.172s0.172 0 0.203-0.063zM9.359 19.063v0c0-0.063-0.078-0.125-0.187-0.125-0.094 0-0.156 0.063-0.156 0.125s0.078 0.125 0.172 0.125 0.172-0.063 0.172-0.125zM9.969 18.953v0c-0.016-0.063-0.109-0.094-0.203-0.078s-0.156 0.078-0.141 0.141 0.094 0.109 0.187 0.094 0.156-0.094 0.156-0.156zM20 14c0-4.422-3.578-8-8-8s-8 3.578-8 8c0 3.531 2.297 6.531 5.469 7.594 0.406 0.078 0.547-0.172 0.547-0.391 0-0.187 0-0.812-0.016-1.484 0 0-2.219 0.484-2.688-0.953 0 0-0.359-0.922-0.891-1.156 0 0-0.719-0.5 0.063-0.5 0 0 0.781 0.063 1.219 0.828 0.703 1.234 1.875 0.875 2.328 0.672 0.078-0.516 0.281-0.875 0.516-1.078-1.781-0.203-3.656-0.891-3.656-3.953 0-0.875 0.313-1.578 0.828-2.141-0.078-0.203-0.359-1.016 0.078-2.125 0.672-0.203 2.203 0.828 2.203 0.828 0.641-0.187 1.313-0.266 2-0.266s1.359 0.078 2 0.266c0 0 1.531-1.031 2.203-0.828 0.438 1.109 0.156 1.922 0.078 2.125 0.516 0.562 0.828 1.266 0.828 2.141 0 3.078-1.875 3.75-3.656 3.953 0.281 0.25 0.547 0.734 0.547 1.484 0 1.062-0.016 1.922-0.016 2.188 0 0.219 0.141 0.469 0.547 0.391 3.172-1.062 5.469-4.062 5.469-7.594zM24 6.5v15c0 2.484-2.016 4.5-4.5 4.5h-15c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5h15c2.484 0 4.5 2.016 4.5 4.5z"></path>
+        </symbol>
+        <symbol id="icon-rss-square" viewBox="0 0 24 28">
+          <title>rss-square</title>
+          <path d="M8 20c0-1.109-0.891-2-2-2s-2 0.891-2 2 0.891 2 2 2 2-0.891 2-2zM13.484 21.469c-0.266-4.844-4.109-8.687-8.953-8.953-0.141-0.016-0.281 0.047-0.375 0.141s-0.156 0.219-0.156 0.359v2c0 0.266 0.203 0.484 0.469 0.5 3.203 0.234 5.781 2.812 6.016 6.016 0.016 0.266 0.234 0.469 0.5 0.469h2c0.141 0 0.266-0.063 0.359-0.156s0.156-0.234 0.141-0.375zM19.484 21.484c-0.266-8.125-6.844-14.703-14.969-14.969-0.156-0.016-0.266 0.031-0.359 0.141-0.094 0.094-0.156 0.219-0.156 0.359v2c0 0.266 0.219 0.484 0.484 0.5 6.484 0.234 11.766 5.516 12 12 0.016 0.266 0.234 0.484 0.5 0.484h2c0.141 0 0.266-0.063 0.359-0.156 0.109-0.094 0.156-0.219 0.141-0.359zM24 6.5v15c0 2.484-2.016 4.5-4.5 4.5h-15c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5h15c2.484 0 4.5 2.016 4.5 4.5z"></path>
+        </symbol>
+        <symbol id="icon-pencil-square" viewBox="0 0 24 28">
+          <title>pencil-square</title>
+          <path d="M6.312 17.313l2.375 2.375-0.812 0.812h-0.875v-1.5h-1.5v-0.875zM12.781 11.219c0.125 0.109 0.094 0.328-0.047 0.469l-4.547 4.547c-0.141 0.141-0.359 0.172-0.469 0.047-0.125-0.109-0.094-0.328 0.047-0.469l4.547-4.547c0.141-0.141 0.359-0.172 0.469-0.047zM8.5 22l8.5-8.5-4.5-4.5-8.5 8.5v4.5h4.5zM18 12.5l1.437-1.437c0.578-0.578 0.578-1.547 0-2.125l-2.375-2.375c-0.578-0.578-1.547-0.578-2.125 0l-1.437 1.437zM24 6.5v15c0 2.484-2.016 4.5-4.5 4.5h-15c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5h15c2.484 0 4.5 2.016 4.5 4.5z"></path>
+        </symbol>
+        <symbol id="icon-envelope-square" viewBox="0 0 24 28">
+          <title>envelope-square</title>
+          <path d="M19.5 2c2.484 0 4.5 2.016 4.5 4.5v15c0 2.484-2.016 4.5-4.5 4.5h-15c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5h15zM20 18.5v-6.813c-0.297 0.328-0.625 0.625-1 0.859-1.469 0.969-2.984 1.875-4.438 2.875-0.734 0.516-1.641 1.078-2.562 1.078v0 0 0 0c-0.922 0-1.828-0.562-2.562-1.078-1.453-1-2.984-1.891-4.438-2.891-0.359-0.234-0.641-0.578-1-0.844v6.813c0 0.828 0.672 1.5 1.5 1.5h13c0.828 0 1.5-0.672 1.5-1.5zM20 9.547c0-0.844-0.625-1.547-1.5-1.547h-13c-0.828 0-1.5 0.672-1.5 1.5 0 0.844 0.875 1.766 1.531 2.203 1.375 0.922 2.797 1.781 4.172 2.688 0.594 0.391 1.578 1.109 2.297 1.109s1.703-0.719 2.297-1.109c1.391-0.906 2.781-1.797 4.172-2.719 0.609-0.406 1.531-1.344 1.531-2.125z"></path>
+        </symbol>
+      </defs>
+    </svg>
+
+    <h1 class="title"><a href="../">Phillip "renolc" Gibson</a></h1>
+    <h1>Unraveling Promises</h1>
+<h2>Sat Mar 11 2017</h2>
+<p>A common issue I've seen some developers struggle with is correctly utilizing the  Promise chain. Promises give us the ability to reduce <a href="http://callbackhell.com">callback hell</a> in our code, but without proper understanding, they could create additional complexity instead. This easily leads into spaghetti code that is hard to follow and hard to maintain. Below, I will explain the nuances of the Promise chain using examples of complex code and how we can simplify.</p>
+<pre class="hljs"><code><span class="hljs-comment">// wrong</span>
+<span class="hljs-keyword">const</span> doThing = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+  firstStep()
+    .then(<span class="hljs-function">(<span class="hljs-params">results</span>) =&gt;</span> {
+      secondStep(results)
+        .then(<span class="hljs-function">(<span class="hljs-params">data</span>) =&gt;</span> resolve(data))
+        .catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> reject(err))
+    })
+    .catch(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> reject(err))
+})
+</code></pre>
+<p>This is a fairly classic example of several things gone wrong with Promises. We'll tackle it one issue at a time, starting with...</p>
+<h2><code>then</code> and <code>catch</code></h2>
+<p>Promises are essentially a container object that will eventually resolve with a value or reject with an error. You provide callback functions (via <code>then</code> and <code>catch</code>) in order to handle each case, and the respective function will be called with either the results or the error.</p>
+<p>The functions you pass to <code>then</code> and <code>catch</code> expect exactly one parameter each. It's a common practice to define these as inline anonymous functions like so: <code>.then((data) =&gt; { /* do something with data */ })</code>. However, if you ever see something like this then a red flag should go off: <code>.then((data) =&gt; resolve(data))</code>.</p>
+<p>The error is a bit subtle, so I will try to explain as clearly as I can. You have the <code>resolve</code> function provided to you through the containing <code>new Promise</code>. It is a function handler that is expecting exactly one parameter. As stated before, <code>then</code> is expecting a function handler that is also expecting one parameter. So... we don't have to wrap <code>resolve</code> in another function. Instead, we can just pass it straight into the <code>then</code> like so: <code>.then(resolve)</code>. This is exactly the same functionally as before, but without the unnecessary wrapping. This same pattern applies to <code>catch</code> and <code>reject</code>, so now our code looks like this:</p>
+<pre class="hljs"><code><span class="hljs-comment">// slightly less wrong</span>
+<span class="hljs-keyword">const</span> doThing = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+  firstStep()
+    .then(<span class="hljs-function">(<span class="hljs-params">results</span>) =&gt;</span> {
+      secondStep(results)
+        .then(resolve) <span class="hljs-comment">// &lt;--</span>
+        .catch(reject) <span class="hljs-comment">// &lt;--</span>
+    })
+    .catch(reject) <span class="hljs-comment">// &lt;--</span>
+})
+</code></pre>
+<h2>Chaining</h2>
+<p>One of the best features of Promises is the Promise chain. Basically, within a <code>then</code> or <code>catch</code>, you can <code>return</code> data which will be passed along into another <code>then</code>. If what you return is another Promise, it will wait for <em>that</em> Promise to resolve or reject before continuing. This means that if you have two Promises and you want them to occur in sequence, all you have to do is return the 2nd Promise from the <code>then</code> handler of the first. From that you can append another <code>then</code> which will handle the results of that 2nd Promise. Likewise, a <code>catch</code> at the end of the chain will handle errors from either Promise (and skip any <code>then</code>s that haven't executed yet).</p>
+<p>So if we update our code to return <code>secondStep</code> from the <code>firstStep.then</code>, we have:</p>
+<pre class="hljs"><code><span class="hljs-comment">// getting there, but still wrong</span>
+<span class="hljs-keyword">const</span> doThing = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+  firstStep()
+    .then(<span class="hljs-function">(<span class="hljs-params">results</span>) =&gt;</span> secondStep(results)) <span class="hljs-comment">// &lt;--</span>
+    .then(resolve) <span class="hljs-comment">// &lt;--</span>
+    .catch(reject) <span class="hljs-comment">// &lt;--</span>
+})
+</code></pre>
+<p>This is already looking a lot better since we aren't nesting nearly as much, but did you spot the error above? Just like before, we now have a function (<code>secondStep</code>) that accepts a single parameter and we are wrapping it in <em>another</em> function that <em>also</em> accepts a single parameter. So like earlier, we can pass <code>secondStep</code> <em>direclty</em> into the <code>then</code> instead.</p>
+<pre class="hljs"><code><span class="hljs-comment">// much easier to follow, but still slightly wrong</span>
+<span class="hljs-keyword">const</span> doThing = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+  firstStep()
+    .then(secondStep) <span class="hljs-comment">// &lt;--</span>
+    .then(resolve)
+    .catch(reject)
+})
+</code></pre>
+<h2>Unwrap</h2>
+<p>Let's think about what <code>doThing</code> is actually <em>doing</em>:</p>
+<ol>
+<li>when you call it, it returns a Promise (which you can call <code>then</code> on)</li>
+<li>that Promise executes <code>firstStep</code>, which is <em>also</em> returning a Promise</li>
+<li>when <code>firstStep</code> resolves, it passes the results to <code>secondStep</code></li>
+<li>when <code>secondStep</code> resolves, it resolves the outer Promise with the results</li>
+<li>if any errors occur during <code>firstStep</code> or <code>secondStep</code>, it rejects the outer Promise with the error</li>
+<li>any defined <code>then</code> or <code>catch</code> on <code>doThing()</code> will handle the resolve/reject of the outer Promise</li>
+</ol>
+<p>Looking at that breakdown, does anything seem unnecessary? Well... why are we creating a Promise in the first place? <code>firstStep</code> is <em>already</em> returning a Promise, so why not just return it directly? If we do that, we no longer need the <code>.then(resolve)</code> or <code>.catch(reject)</code> lines. Instead, the chain we are creating is <em>already</em> <code>then</code>able, so there is no benefit in handling the results (or errors) just to resolve them again.</p>
+<pre class="hljs"><code><span class="hljs-comment">// right!</span>
+<span class="hljs-keyword">const</span> doThing = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> firstStep()
+  .then(secondStep)
+</code></pre>
+<p>Now let's think about the flow, just to make sure it is functionally equivalent:</p>
+<ol>
+<li>when you call <code>doThing</code>, it executes <code>firstStep</code> which returns a Promise</li>
+<li>when <code>firstStep</code> resolves, it passes the results to <code>secondStep</code></li>
+<li>when <code>secondStep</code> resolves, it will call any defined <code>then</code> functions with the results</li>
+<li>if <code>firstStep</code> or <code>secondStep</code> error, they will call any defined <code>catch</code> functions</li>
+</ol>
+<p>Thinking through it, we can conclude that this code works the same as our original, only it is significantly reduced in size and complexity. Hopefully this example was helpful to you and now you understand Promises a little better than before.</p>
+
+    
+    <a class="btn left" href="./making-node-cli-apps-the-basics">&leftarrow; Making Node CLI Apps: The Basics</a>
+
+    <div class="links">
+      <div class="icon-container">
+        <a href="mailto:gibson.phillip.j@gmail.com" class="icon-link"><svg class="icon icon-envelope-square"><use xlink:href="#icon-envelope-square"></use></svg></a>
+        <div class="icon-desc">email</div>
+      </div>
+      <div class="icon-container">
+        <a href="https://stackoverflow.com/story/phillipgibson" class="icon-link"><svg class="icon icon-pencil-square"><use xlink:href="#icon-pencil-square"></use></svg></a>
+        <div class="icon-desc">resume</div>
+      </div>
+      <div class="icon-container">
+        <a href="https://github.com/renolc" class="icon-link"><svg class="icon icon-github-square"><use xlink:href="#icon-github-square"></use></svg></a>
+        <div class="icon-desc">github</div>
+      </div>
+      <div class="icon-container">
+        <a href="https://twitter.com/renolc" class="icon-link"><svg class="icon icon-twitter-square"><use xlink:href="#icon-twitter-square"></use></svg></a>
+        <div class="icon-desc">twitter</div>
+      </div>
+      <div class="icon-container">
+        <a href="../rss.xml" class="icon-link"><svg class="icon icon-rss-square"><use xlink:href="#icon-rss-square"></use></svg></a>
+        <div class="icon-desc">rss</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

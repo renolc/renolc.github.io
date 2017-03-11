@@ -4,7 +4,7 @@
         <description><![CDATA[A mostly javascript tech blog]]></description>
         <link>https://renolc.github.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 10 Mar 2017 19:41:06 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 11 Mar 2017 16:07:35 GMT</lastBuildDate>
         <atom:link href="https://renolc.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Hello, World!]]></title>
@@ -26,6 +26,13 @@
             <link>https://renolc.github.io/posts/making-node-cli-apps-the-basics</link>
             <guid isPermaLink="true">https://renolc.github.io/posts/making-node-cli-apps-the-basics</guid>
             <pubDate>Wed, 08 Mar 2017 05:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Unraveling Promises]]></title>
+            <description><![CDATA[A common issue I've seen some developers struggle with is correctly utilizing the  Promise chain. Promises give us the ability to reduce <a href="http://callbackhell.com">callback hell</a> in our code, but without proper understanding, they could create additional complexity instead. This easily leads into spaghetti code that is hard to follow and hard to maintain. Below, I will explain the nuances of the Promise chain using examples of complex code and how we can simplify.]]></description>
+            <link>https://renolc.github.io/posts/unraveling-promises</link>
+            <guid isPermaLink="true">https://renolc.github.io/posts/unraveling-promises</guid>
+            <pubDate>Sat, 11 Mar 2017 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
