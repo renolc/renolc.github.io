@@ -7,7 +7,7 @@ The long and short of it is, `chalk-blog` was meant to be a CLI app. I originall
 
 After a few iterations, I started to genuinely like how it worked. So like a good little developer, I pulled out that code and slapped it into its own package.
 
-The API I came up with is highly based off on `commander.js`:
+The API is highly based off of `commander.js`:
 
 ```js
 const cli = require('ezcli')

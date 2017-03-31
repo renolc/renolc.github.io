@@ -40,7 +40,7 @@
 <p>As mentioned in <a href="/posts/introducing-chalkblog">Introducing: chalk-blog</a>, while working on my blogging system I pulled out various useful pieces into their own packages. These were parts of the system I thought could be useful outside the scope of <code>chalk-blog</code> and thus deserved their own dedicated distributions. <code>ezcli</code> was the first of those packages.</p>
 <p>The long and short of it is, <code>chalk-blog</code> was meant to be a CLI app. I originally started with <a href="https://www.npmjs.com/package/commander"><code>commander.js</code></a>, which is an excellent system. However, I quickly discovered that I didn't care about 90% of the features offered to me, and the other 10% required a bit more boilerplate than I would have liked. And so, I scrapped it all and started doing it all manually.</p>
 <p>After a few iterations, I started to genuinely like how it worked. So like a good little developer, I pulled out that code and slapped it into its own package.</p>
-<p>The API I came up with is highly based off on <code>commander.js</code>:</p>
+<p>The API is highly based off of <code>commander.js</code>:</p>
 <pre class="hljs"><code><span class="hljs-keyword">const</span> cli = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ezcli'</span>)
 
 cli(<span class="hljs-string">'myApp'</span>)
