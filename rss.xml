@@ -4,7 +4,7 @@
         <description><![CDATA[A mostly javascript tech blog]]></description>
         <link>https://renolc.github.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sat, 18 Mar 2017 18:34:38 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 31 Mar 2017 21:18:50 GMT</lastBuildDate>
         <atom:link href="https://renolc.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Hello, World!]]></title>
@@ -33,6 +33,13 @@
             <link>https://renolc.github.io/posts/unraveling-promises</link>
             <guid isPermaLink="true">https://renolc.github.io/posts/unraveling-promises</guid>
             <pubDate>Sat, 11 Mar 2017 05:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[ezcli]]></title>
+            <description><![CDATA[As mentioned in <a href="/posts/introducing-chalkblog">Introducing: chalk-blog</a>, while working on my blogging system I pulled out various useful pieces into their own packages. These were parts of the system I thought could be useful outside the scope of <code>chalk-blog</code> and thus deserved their own dedicated distributions. <code>ezcli</code> was the first of those packages.]]></description>
+            <link>https://renolc.github.io/posts/ezcli</link>
+            <guid isPermaLink="true">https://renolc.github.io/posts/ezcli</guid>
+            <pubDate>Fri, 31 Mar 2017 04:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
