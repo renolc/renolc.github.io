@@ -27,7 +27,7 @@ Looking at the code above, it was becoming clear that my desired method of execu
 
 After playing around with my solution, I realized how arbitrary I could really make this. Why limit myself to just `git` commands? Why not the whole CLI? So I renamed the package and republished with some more examples, and voila, `cmd-executor` was born.
 
-The tl;dr of the code is that it will accept _any_ property request and return a function. That function would likewise accept any property request (returning _another_ function... ad infinitum), _or_ you could _execute_ the function which will string together the properties concatenated into a string, and pass them along to my original `Promise`ified, `exec` function.
+The tl;dr of the code is that it will accept _any_ property request and return a function. That function would likewise accept any property request (returning _another_ function... ad infinitum), _or_ you could _execute_ the function which will concatenate together the accessed properties into a string and pass them along to my original `Promise`ified, `exec` function.
 
 It's easier shown than explained:
 
