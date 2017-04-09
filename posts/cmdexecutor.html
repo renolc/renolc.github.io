@@ -4,7 +4,7 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../style.css">
-  <title>renolc - ezcli</title>
+  <title>renolc - cmd-executor</title>
 </head>
 
 <body>
@@ -35,70 +35,55 @@
     </svg>
 
     <h1 class="title"><a href="../">Phillip "renolc" Gibson</a></h1>
-    <h1>ezcli</h1>
-<h2>Fri Mar 31 2017</h2>
-<p>As mentioned in <a href="/posts/introducing-chalkblog">Introducing: chalk-blog</a>, while working on my blogging system I pulled out various useful pieces into their own packages. These were parts of the system I thought could be useful outside the scope of <code>chalk-blog</code> and thus deserved their own dedicated distributions. <code>ezcli</code> was the first of those packages.</p>
-<p>The long and short of it is, <code>chalk-blog</code> was meant to be a CLI app. I originally started with <a href="https://www.npmjs.com/package/commander"><code>commander.js</code></a>, which is an excellent system. However, I quickly discovered that I didn't care about 90% of the features offered to me, and the other 10% required a bit more boilerplate than I would have liked. And so, I scrapped it all and started doing it all manually.</p>
-<p>After a few iterations, I started to genuinely like how it worked. So like a good little developer, I pulled out that code and slapped it into its own package.</p>
-<p>The API is highly based off of <code>commander.js</code>:</p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> cli = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ezcli'</span>)
-
-cli(<span class="hljs-string">'myApp'</span>)
-  .command(<span class="hljs-string">'task'</span>, () =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'in task'</span>))
-  .command(<span class="hljs-string">'hi'</span>, (name) =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello'</span>, name))
-  .command(<span class="hljs-string">'bye'</span>, (name = <span class="hljs-string">'Phil'</span>) =&gt; <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'goodbyte'</span>, name))
-  .process()
+    <h1>cmd-executor</h1>
+<h2>Sat Apr 08 2017</h2>
+<p>Yet another <a href="/posts/introducing-chalkblog"><code>chalk-blog</code></a> spin-off, this time I want to talk about <a href="https://github.com/renolc/cmd-executor"><code>cmd-executor</code></a>, which may be my favorite package I've written so far.</p>
+<p>So while working on <code>chalk-blog</code>, a decent chunk of the work was interfacing with <code>git</code>. I looked into using a package, but many were older or just way too complex for my simple needs. So instead I made a simple <code>Promise</code> wrapper around <code>child_process.exec</code> (which you can view <a href="https://github.com/renolc/simple-exec-promise">here</a>).</p>
+<p>This solution worked well, because it allowed me to execute arbitrary commands, which means I would never have to worry about &quot;supporting&quot; certain git features or going out of date. Instead, I could just <code>await exec('git init')</code> and it would work as expected.</p>
+<p>However, writing all my commands as strings didn't seem ideal. I'm sure it's all psychological, but for some reason it feels more &quot;right&quot; to do something like <code>git.init()</code> rather than <code>exec('git init')</code>, even if they are doing the same thing under the hood. And so, I set off on my ultimately unnecessary quest to enhance my <code>exec</code> wrapper.</p>
+<p>My first solution was naive, but workable. Something similar to:</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> git = {
+  <span class="hljs-attr">init</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> exec(<span class="hljs-string">'git init'</span>),
+  <span class="hljs-attr">add</span>: <span class="hljs-function">(<span class="hljs-params">path</span>) =&gt;</span> exec(<span class="hljs-string">`git add <span class="hljs-subst">${path}</span>`</span>),
+  <span class="hljs-comment">// etc</span>
+}
 </code></pre>
-<p>And that's it. That's the whole API.</p>
-<p>There is a decent amount of magic behind the scenes, but in true sense of the &quot;convention over configuration&quot; mindset, if your use case falls within the realm of <code>ezcli</code>, it keeps much of the complexity out of sight and out of mind.</p>
-<p>The big features are:</p>
-<ol>
-<li>
-<p><strong>automatic usage messages</strong></p>
-<pre class="hljs"><code>$ myApp
+<p>It was clean, and to the point. However, it kind required me to re-declare <em>every</em> git command I wanted to support. For my own needs, this probably would have been ok, since I only was planning on using something like 2-3 basic commands anyway. However, I wanted to see if I could generalize this somewhat.</p>
+<p>Looking at the code above, it was becoming clear that my desired method of execution would be something like <code>git.command()</code> which converts directly into <code>git command</code>. I wanted this to be arbitrarily nested though, meaning <code>git.remote.add('origin', url)</code> would also be valid, even though it is multiple layers deep. Also, I didn't want to have to manually declare any of this. Luckily, I had already done some initial research into <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"><code>Proxy</code> objects</a> for a previous side project.</p>
+<p><code>Proxy</code> objects are neat. Basically, you wrap another object and can intercept all incoming interactions. This seemed perfect for my needs, so I dug a little deeper into the docs. Before too long, I had my solution, and it was a whopping... <a href="https://github.com/renolc/cmd-executor/blob/master/index.js">10 lines of code</a>.</p>
+<p>After playing around with my solution, I realized how arbitrary I could really make this. Why limit myself to just <code>git</code> commands? Why not the whole CLI? So I renamed the package and republished with some more examples, and voila, <code>cmd-executor</code> was born.</p>
+<p>The tl;dr of the code is that it will accept <em>any</em> property request and return a function. That function would likewise accept any property request (returning <em>another</em> function... ad infinitum), <em>or</em> you could <em>execute</em> the function which will string together the properties concatenated into a string, and pass them along to my original <code>Promise</code>ified, <code>exec</code> function.</p>
+<p>It's easier shown than explained:</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> cmd = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cmd-executor'</span>)
 
-  v1.0.0
-
-  Usage: myApp &lt;command&gt;
-
-  Commands:
-    task
-    hi &lt;name&gt;
-    bye [name = 'Phil']
-
-
-$ myApp hi
-
-  Usage: myApp hi &lt;name&gt;
-
+cmd.git.init() <span class="hljs-comment">// runs "git init"</span>
+cmd.echo(<span class="hljs-string">'hi'</span>) <span class="hljs-comment">// runs "echo hi"</span>
+cmd.mkdir(<span class="hljs-string">'bork'</span>) <span class="hljs-comment">// runs "mkdir bork"</span>
 </code></pre>
-</li>
-<li>
-<p><strong>automatic command signatures</strong></p>
-<p>You may have noticed in the usage messages above that <code>hi</code> had the argument <code>&lt;name&gt;</code> generated. Likewise, <code>bye</code> had the optional argument, <code>[name = 'Phil']</code>, generated. Where did these come from? From the provided functions, of course!</p>
-<p>Since you are already providing function handlers for each command, and those functions already will have expected arguments defined on them, why should you have to define them again? <code>ezcli</code> will automatically parse out argument names as well as default values and automatically include them in your subcommand signatures. This info is then used to generate your usage messages and to inform the user if they are missing any required parameters.</p>
-</li>
-</ol>
-<p>Some potential drawbacks you may want to consider:</p>
-<ol>
-<li>
-<p><strong>no default function</strong></p>
-<p><code>ezcli</code> was definitely made with my own use cases in mind, first and foremost. Because of that, it doesn't include any sort of &quot;default&quot; function handler. So running <code>myApp</code> from above will not do anything in itself. Instead, it will just display a usage message. Similar to how <code>git</code> works, since <code>git</code> doesn't do anything by itself. Instead, you are required to use <code>git &lt;something&gt;</code>. This is the model I wanted to emulate for my blogging platform, and thus, I haven't currently had a need for any default functions</p>
-</li>
-<li>
-<p><strong>argument parsing is imperfect</strong></p>
-<p>It turns out not having real reflection built in to JavaScript makes argument parsing difficult. This is another piece of code that I pulled out into its own package, so I plan to improve it as I can, but it's not that difficult to confuse. Such as if you have a parameter with a default value of another function. It works for primitives for now, which is all I currently need.</p>
-</li>
-<li>
-<p><strong>probably missing things you might find essential</strong></p>
-<p>As mentioned before, this was made with my own needs in mind. So things you may absolutely need just may not be there. Off the top of my head, these may include:  flags or flag arguments, custom usage messages, command descriptions, and probably much more. These are simply features I haven't needed, so they aren't there. I may or may not add some of them in the future.</p>
-<p>If you really need something more robust, I would highly recommend <code>commander.js</code>.</p>
-</li>
-</ol>
-<p>And that's about it. If you would like to check out <code>ezcli</code>, you can install it through <a href="https://www.npmjs.com/package/ezcli"><code>npm</code></a> or check out the code on <a href="https://github.com/renolc/ezcli"><code>github</code></a>.</p>
+<p>And if you really only care about certain commands:</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> { git, echo, touch } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cmd-executor'</span>)
 
-    <a class="btn right" href="/posts/cmdexecutor">cmd-executor &rightarrow;</a>
-    <a class="btn left" href="/posts/unraveling-promises">&leftarrow; Unraveling Promises</a>
+git.remote.add(<span class="hljs-string">'origin'</span>, url)
+echo(<span class="hljs-string">'hi'</span>)
+touch(<span class="hljs-string">'a.txt'</span>)
+</code></pre>
+<p>As mentioned before, all commands eventually run via a <code>Promise</code>ified <code>exec</code>, meaning you can use <code>await</code> or <code>.then</code> to sequence:</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> { git } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cmd-executor'</span>)
+
+<span class="hljs-keyword">const</span> run = <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">await</span> git.init()
+  <span class="hljs-keyword">await</span> git.remote.add(<span class="hljs-string">'origin'</span>, url)
+  <span class="hljs-keyword">await</span> git.add(<span class="hljs-string">'.'</span>)
+  <span class="hljs-keyword">await</span> git.commit(<span class="hljs-string">'-m "Initial commit"'</span>)
+  <span class="hljs-keyword">await</span> git.push()
+}
+
+run()
+</code></pre>
+<p>Overall, I think it's pretty darn neat. Especially for just a few lines of code. If you want to learn more, there are some additional advanced examples on the <a href="https://github.com/renolc/cmd-executor/blob/master/README.md">README</a>, or you can check out how I'm using it in some of my <a href="https://github.com/renolc/chalk/blob/master/commands/publish.js"><code>chalk-blog</code> code</a>.</p>
+
+    
+    <a class="btn left" href="/posts/ezcli">&leftarrow; ezcli</a>
 
     <div class="links">
       <div class="icon-container">
