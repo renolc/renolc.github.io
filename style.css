@@ -4,6 +4,10 @@
 
 /* app */
 
+* {
+  transition: 200ms all;
+}
+
 .hljs {
   background: #fafafa;
   border-bottom: 2px solid #e5e5e5;
@@ -11,8 +15,17 @@
   padding: 15px;
 }
 
-* {
-  transition: 200ms all;
+code {
+  font-size: 1.15em;
+  background: #fafafa;
+  padding: 2px 3px;
+  border-radius: 2px;
+  border: 1px solid #ddd;
+}
+
+pre > code {
+  border: none;
+  background: none;
 }
 
 a {
