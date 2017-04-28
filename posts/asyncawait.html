@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/style.css">
   <link rel="alternate" type="application/rss+xml" title="rss" href="/rss.xml"/>
-  <title>renolc - cmd-executor</title>
+  <title>renolc - async/await</title>
 </head>
 
 <body>
@@ -36,55 +36,56 @@
     </svg>
 
     <h1 class="title"><a href="../">Phillip "renolc" Gibson</a></h1>
-    <h1>cmd-executor</h1>
-<h2>Sat Apr 08 2017</h2>
-<p>Yet another <a href="/posts/introducing-chalkblog"><code>chalk-blog</code></a> spin-off, this time I want to talk about <a href="https://github.com/renolc/cmd-executor"><code>cmd-executor</code></a>, which may be my favorite package I've written so far.</p>
-<p>So while working on <code>chalk-blog</code>, a decent chunk of the work was interfacing with <code>git</code>. I looked into using a package, but many were older or just way too complex for my simple needs. So instead I made a simple <code>Promise</code> wrapper around <code>child_process.exec</code> (which you can view <a href="https://github.com/renolc/simple-exec-promise">here</a>).</p>
-<p>This solution worked well, because it allowed me to execute arbitrary commands, which means I would never have to worry about &quot;supporting&quot; certain git features or going out of date. Instead, I could just <code>await exec('git init')</code> and it would work as expected.</p>
-<p>However, writing all my commands as strings didn't seem ideal. I'm sure it's all psychological, but for some reason it feels more &quot;right&quot; to do something like <code>git.init()</code> rather than <code>exec('git init')</code>, even if they are doing the same thing under the hood. And so, I set off on my ultimately unnecessary quest to enhance my <code>exec</code> wrapper.</p>
-<p>My first solution was naive, but workable. Something similar to:</p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> git = {
-  <span class="hljs-attr">init</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> exec(<span class="hljs-string">'git init'</span>),
-  <span class="hljs-attr">add</span>: <span class="hljs-function">(<span class="hljs-params">path</span>) =&gt;</span> exec(<span class="hljs-string">`git add <span class="hljs-subst">${path}</span>`</span>),
-  <span class="hljs-comment">// etc</span>
+    <h1>async/await</h1>
+<h2>Thu Apr 27 2017</h2>
+<p>Ever since node 7.6.0 dropped, I have been all over the <code>async</code>/<code>await</code> bandwagon. Pretty much all of my side projects use them now instead of raw Promises (at least, as much as I can), and I'm loving the clarity they provide to my code.</p>
+<p>As an example, here is a chunk from <a href="https://github.com/renolc/chalk"><code>chalk-blog</code></a> before and after the conversion:</p>
+<pre class="hljs"><code><span class="hljs-comment">// before</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">repoUrl</span>) =&gt;</span> {
+  git.init()
+    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> git.remote.add(<span class="hljs-string">'origin'</span>, repoUrl))
+    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> cp(<span class="hljs-string">`-r <span class="hljs-subst">${chalkPath}</span>/docs/*`</span>, <span class="hljs-string">'./'</span>))
+    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> git.add(<span class="hljs-string">'.'</span>))
+    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> git.commit(<span class="hljs-string">'-m "New chalk blog created"'</span>))
+    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> log(<span class="hljs-string">'Done!'</span>))
+    .catch(<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> log(e.toString()))
 }
 </code></pre>
-<p>It was clean, and to the point. However, it kind required me to re-declare <em>every</em> git command I wanted to support. For my own needs, this probably would have been ok, since I only was planning on using something like 2-3 basic commands anyway. However, I wanted to see if I could generalize this somewhat.</p>
-<p>Looking at the code above, it was becoming clear that my desired method of execution would be something like <code>git.command()</code> which converts directly into <code>git command</code>. I wanted this to be arbitrarily nested though, meaning <code>git.remote.add('origin', url)</code> would also be valid, even though it is multiple layers deep. Also, I didn't want to have to manually declare any of this. Luckily, I had already done some initial research into <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy"><code>Proxy</code> objects</a> for a previous side project.</p>
-<p><code>Proxy</code> objects are neat. Basically, you wrap another object and can intercept all incoming interactions. This seemed perfect for my needs, so I dug a little deeper into the docs. Before too long, I had my solution, and it was a whopping... <a href="https://github.com/renolc/cmd-executor/blob/master/index.js">10 lines of code</a>.</p>
-<p>After playing around with my solution, I realized how arbitrary I could really make this. Why limit myself to just <code>git</code> commands? Why not the whole CLI? So I renamed the package and republished with some more examples, and voila, <code>cmd-executor</code> was born.</p>
-<p>The tl;dr of the code is that it will accept <em>any</em> property request and return a function. That function would likewise accept any property request (returning <em>another</em> function... ad infinitum), <em>or</em> you could <em>execute</em> the function which will concatenate together the accessed properties into a string and pass them along to my original <code>Promise</code>ified, <code>exec</code> function.</p>
-<p>It's easier shown than explained:</p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> cmd = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cmd-executor'</span>)
+<pre class="hljs"><code><span class="hljs-comment">// after</span>
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-keyword">async</span> (repoUrl) =&gt; {
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">await</span> git.init()
+    <span class="hljs-keyword">await</span> git.remote.add(<span class="hljs-string">'origin'</span>, repoUrl)
 
-cmd.git.init() <span class="hljs-comment">// runs "git init"</span>
-cmd.echo(<span class="hljs-string">'hi'</span>) <span class="hljs-comment">// runs "echo hi"</span>
-cmd.mkdir(<span class="hljs-string">'bork'</span>) <span class="hljs-comment">// runs "mkdir bork"</span>
+    <span class="hljs-keyword">await</span> cp(<span class="hljs-string">`-r <span class="hljs-subst">${chalkPath}</span>/docs/*`</span>, <span class="hljs-string">'./'</span>)
+
+    <span class="hljs-keyword">await</span> git.add(<span class="hljs-string">'.'</span>)
+    <span class="hljs-keyword">await</span> git.commit(<span class="hljs-string">'-m "New chalk blog created"'</span>)
+
+    log(<span class="hljs-string">'Done!'</span>)
+  } <span class="hljs-keyword">catch</span> (e) {
+    log(e.toString())
+  }
+}
 </code></pre>
-<p>And if you really only care about certain commands:</p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> { git, echo, touch } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cmd-executor'</span>)
-
-git.remote.add(<span class="hljs-string">'origin'</span>, url)
-echo(<span class="hljs-string">'hi'</span>)
-touch(<span class="hljs-string">'a.txt'</span>)
+<p>I've heard from a few people who <em>prefer</em> the look of the former, but to me, the latter is much more semantic. It removes the need for a lot of the Promise chain boilerplate, such as all of the necessary embedded anonymous functions (and their accompanying parentheses). It also just looks an awful lot like regular synchronous code, so it's easy to follow and reason about.</p>
+<p>There are a few gotchas to consider when using <code>async</code>/<code>await</code> though. Namely, <code>await</code> is not available at the root level of a js file. <code>await</code> is <em>only</em> available from within an <code>async</code> context. So instead of</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> results = <span class="hljs-keyword">await</span> <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-string">'hi'</span>)
+<span class="hljs-built_in">console</span>.log(results)
 </code></pre>
-<p>As mentioned before, all commands eventually run via a <code>Promise</code>ified <code>exec</code>, meaning you can use <code>await</code> or <code>.then</code> to sequence:</p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> { git } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cmd-executor'</span>)
-
-<span class="hljs-keyword">const</span> run = <span class="hljs-keyword">async</span> () =&gt; {
-  <span class="hljs-keyword">await</span> git.init()
-  <span class="hljs-keyword">await</span> git.remote.add(<span class="hljs-string">'origin'</span>, url)
-  <span class="hljs-keyword">await</span> git.add(<span class="hljs-string">'.'</span>)
-  <span class="hljs-keyword">await</span> git.commit(<span class="hljs-string">'-m "Initial commit"'</span>)
-  <span class="hljs-keyword">await</span> git.push()
+<p>you have to do something more like</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> run = <span class="hljs-keyword">async</span> () =&gt; {
+  <span class="hljs-keyword">const</span> results = <span class="hljs-keyword">await</span> <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-string">'hi'</span>)
+  <span class="hljs-built_in">console</span>.log(results)
 }
 
 run()
 </code></pre>
-<p>Overall, I think it's pretty darn neat. Especially for just a few lines of code. If you want to learn more, there are some additional advanced examples on the <a href="https://github.com/renolc/cmd-executor/blob/master/README.md">README</a>, or you can check out how I'm using it in some of my <a href="https://github.com/renolc/chalk/blob/master/commands/publish.js"><code>chalk-blog</code> code</a>.</p>
+<p>This is actually a feature. Not having <code>await</code> available at the root level means that you can never accidentally block the main event loop. Just like Promises themselves, you can only block a specific context <em>outside</em> of the event loop.</p>
+<p>So there you have it. Some basic examples of how <code>async</code>/<code>await</code> have simplified my own code, and maybe could help you too.</p>
 
-    <a class="btn right" href="/posts/asyncawait">async/await &rightarrow;</a>
-    <a class="btn left" href="/posts/ezcli">&leftarrow; ezcli</a>
+    
+    <a class="btn left" href="/posts/cmdexecutor">&leftarrow; cmd-executor</a>
 
     <div class="links">
       <div class="icon-container">

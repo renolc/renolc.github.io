@@ -4,7 +4,7 @@
         <description><![CDATA[A mostly javascript tech blog]]></description>
         <link>https://renolc.github.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Wed, 19 Apr 2017 21:20:42 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 28 Apr 2017 03:12:36 GMT</lastBuildDate>
         <atom:link href="https://renolc.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Hello, World!]]></title>
@@ -47,6 +47,13 @@
             <link>https://renolc.github.io/posts/cmdexecutor</link>
             <guid isPermaLink="true">https://renolc.github.io/posts/cmdexecutor</guid>
             <pubDate>Sat, 08 Apr 2017 04:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[async/await]]></title>
+            <description><![CDATA[Ever since node 7.6.0 dropped, I have been all over the <code>async</code>/<code>await</code> bandwagon. Pretty much all of my side projects use them now instead of raw Promises (at least, as much as I can), and I'm loving the clarity they provide to my code.]]></description>
+            <link>https://renolc.github.io/posts/asyncawait</link>
+            <guid isPermaLink="true">https://renolc.github.io/posts/asyncawait</guid>
+            <pubDate>Thu, 27 Apr 2017 04:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
