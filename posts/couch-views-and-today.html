@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/style.css">
   <link rel="alternate" type="application/rss+xml" title="rss" href="/rss.xml"/>
-  <title>renolc - async/await</title>
+  <title>renolc - Couch Views and Today</title>
 </head>
 
 <body>
@@ -36,56 +36,58 @@
     </svg>
 
     <h1 class="title"><a href="../">Phillip "renolc" Gibson</a></h1>
-    <h1>async/await</h1>
-<h2>Thu Apr 27 2017</h2>
-<p>Ever since node 7.6.0 dropped, I have been all over the <code>async</code>/<code>await</code> bandwagon. Pretty much all of my side projects use them now instead of raw Promises (at least, as much as I can), and I'm loving the clarity they provide to my code.</p>
-<p>As an example, here is a chunk from <a href="https://github.com/renolc/chalk"><code>chalk-blog</code></a> before and after the conversion:</p>
-<pre class="hljs"><code><span class="hljs-comment">// before</span>
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-function">(<span class="hljs-params">repoUrl</span>) =&gt;</span> {
-  git.init()
-    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> git.remote.add(<span class="hljs-string">'origin'</span>, repoUrl))
-    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> cp(<span class="hljs-string">`-r <span class="hljs-subst">${chalkPath}</span>/docs/*`</span>, <span class="hljs-string">'./'</span>))
-    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> git.add(<span class="hljs-string">'.'</span>))
-    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> git.commit(<span class="hljs-string">'-m "New chalk blog created"'</span>))
-    .then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> log(<span class="hljs-string">'Done!'</span>))
-    .catch(<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> log(e.toString()))
+    <h1>Couch Views and Today</h1>
+<h2>Mon May 29 2017</h2>
+<p>I ran into an interesting issue this past week regarding a Couch View and the concept of Today. Here's a synopsis of the problem as well as how it was fixed...</p>
+<h2>A (very) brief overview of Couch</h2>
+<p>Just in case you haven't used Couch before, here is a quick summary.</p>
+<h3>NoSQL</h3>
+<p>Couch is a document based DB. This means it will store raw JSON objects as opposed to relational tables like traditional SQL databases. Think Mongo, but with some philosophical differences.</p>
+<h3>Revisions</h3>
+<p>Couch will keep record of every iteration of a document. It does this by never actually changing the document, but instead replacing them completely with new &quot;revisions&quot; and retaining the previous versions as history. So if you alter a field on a doc, you will get a new one with an incremented <code>_rev</code> key, while the original will still be there, just with the older revision ID.</p>
+<h3>Views</h3>
+<p>Instead of SQL-like indexes, Couch uses Views. These are map/reduce functions defined in the DB that can parse through the documents and <code>emit</code> an arbitrary key/value pair. As a basic example:</p>
+<pre class="hljs"><code><span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">doc</span>) </span>{
+  emit(doc.type, doc.name)
 }
 </code></pre>
-<pre class="hljs"><code><span class="hljs-comment">// after</span>
-<span class="hljs-built_in">module</span>.exports = <span class="hljs-keyword">async</span> (repoUrl) =&gt; {
-  <span class="hljs-keyword">try</span> {
-    <span class="hljs-keyword">await</span> git.init()
-    <span class="hljs-keyword">await</span> git.remote.add(<span class="hljs-string">'origin'</span>, repoUrl)
-
-    <span class="hljs-keyword">await</span> cp(<span class="hljs-string">`-r <span class="hljs-subst">${chalkPath}</span>/docs/*`</span>, <span class="hljs-string">'./'</span>)
-
-    <span class="hljs-keyword">await</span> git.add(<span class="hljs-string">'.'</span>)
-    <span class="hljs-keyword">await</span> git.commit(<span class="hljs-string">'-m "New chalk blog created"'</span>)
-
-    log(<span class="hljs-string">'Done!'</span>)
-  } <span class="hljs-keyword">catch</span> (e) {
-    log(e.toString())
-  }
+<p>This View function will run on every doc in the database, and emit a key of the <code>type</code> with a value of the <code>name</code>. So then you can &quot;query&quot; this view by providing a <code>key</code> you are interested in, such as a <code>&quot;person&quot;</code>. So this this view would return all of the <code>name</code>s of the docs who have a type equal to <code>&quot;person&quot;</code>.</p>
+<p>As Views are created and documents adjusted, the results of these Views are cached so you will get near instant results.</p>
+<h2>The problem</h2>
+<p>There was a database full of records which contained a date field. As a contrived example, lets assume they looked like this:</p>
+<pre class="hljs"><code>{
+  <span class="hljs-attr">"_id"</span>: <span class="hljs-string">"1"</span>,
+  <span class="hljs-attr">"_rev"</span>: <span class="hljs-string">"1"</span>,
+  <span class="hljs-attr">"createdOn"</span>: <span class="hljs-string">"2017-05-29"</span>
 }
 </code></pre>
-<p>I've heard from a few people who <em>prefer</em> the look of the former, but to me, the latter is much more semantic. It removes the need for a lot of the Promise chain boilerplate, such as all of the necessary embedded anonymous functions (and their accompanying parentheses). It also just looks an awful lot like regular synchronous code, so it's easy to follow and reason about.</p>
-<p>There are a few gotchas to consider when using <code>async</code>/<code>await</code> though. Namely, <code>await</code> is not available at the root level of a js file. <code>await</code> is <em>only</em> available from within an <code>async</code> context. So instead of</p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> results = <span class="hljs-keyword">await</span> <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-string">'hi'</span>)
-<span class="hljs-built_in">console</span>.log(results)
-</code></pre>
-<p>you have to do something more like</p>
-<pre class="hljs"><code><span class="hljs-keyword">const</span> run = <span class="hljs-keyword">async</span> () =&gt; {
-  <span class="hljs-keyword">const</span> results = <span class="hljs-keyword">await</span> <span class="hljs-built_in">Promise</span>.resolve(<span class="hljs-string">'hi'</span>)
-  <span class="hljs-built_in">console</span>.log(results)
+<p>There was a need to obtain every record that was created &quot;today&quot; (meaning on whatever day the query was run). The <em>obvious</em> solution was to have a view like so (again, contrived example):</p>
+<pre class="hljs"><code><span class="hljs-comment">// getToday</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">doc</span>) </span>{
+  <span class="hljs-keyword">var</span> today = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toISOString().substr(<span class="hljs-number">0</span>, <span class="hljs-number">10</span>)
+  <span class="hljs-keyword">if</span> (doc.createdOn === today) emit()
+  <span class="hljs-comment">// omitting values from emit is valid -- key and value will both be null</span>
+  <span class="hljs-comment">// (_id is always available and the full doc can be obtained with a query param,</span>
+  <span class="hljs-comment">// so no need to emit them directly)</span>
 }
-
-run()
 </code></pre>
-<p>This is actually a feature. Not having <code>await</code> available at the root level means that you can never accidentally block the main event loop. Just like Promises themselves, you can only block a specific context <em>outside</em> of the event loop.</p>
-<p>So there you have it. Some basic examples of how <code>async</code>/<code>await</code> have simplified my own code, and maybe could help you too.</p>
+<p>You could then obtain the results by calling the <code>getToday</code> View. This <em>worked</em>... but only on the first day it was run. Wut.</p>
+<h2>The reveal</h2>
+<p>So it turns out that Couch will optimize the Views by not double checking results that <em>previously</em> passed, and who haven't updated <em>since</em>. This means that if my example doc from above hadn't changed, even if I ran that same View several days later, it would still <code>emit</code>. And Couch will <em>know</em> the doc hasn't updated, because it's <code>_rev</code> hasn't changed at all. This is actually pretty smart, since it will keep the View performant on subsequent executions.</p>
+<h2>The solution</h2>
+<p>It's rather obvious in hindsight, but the solution is to not have Views care about something like the concept of &quot;today&quot; (which is subjective). Instead, the more &quot;Couch way&quot; would be something like this:</p>
+<pre class="hljs"><code><span class="hljs-comment">// getByDate</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">doc</span>) </span>{
+  emit(doc.createdOn)
+  <span class="hljs-comment">// omitting the value portion of emit will default to `null`</span>
+  <span class="hljs-comment">// which isn't a problem (see comment in above view function)</span>
+}
+</code></pre>
+<p>Now my view doesn't care what day it happens to be. All it knows is there are docs that have a <code>createdOn</code> field, and we want to <code>emit</code> all of them as keys. As mentioned above, you can pass in keys that you care about and Couch will filter the View results accordingly. So we move the concept of &quot;today&quot; to the client and can now query the View like so: <code>getByDate?key=&quot;2017-05-29&quot;</code>. This will return all records with <code>createdOn</code> equal to the date passed in. No more worrying about the cached results going out of date, since it's now up to the client to pass in the correct date. Couch will happily chug along.</p>
+<p>Again, it seems so obvious in hindsight, but the symptoms weren't immediately obvious, so I thought this might be helpful to someone else out there.</p>
 
-    <a class="btn right" href="/posts/couch-views-and-today">Couch Views and Today &rightarrow;</a>
-    <a class="btn left" href="/posts/cmdexecutor">&leftarrow; cmd-executor</a>
+    
+    <a class="btn left" href="/posts/asyncawait">&leftarrow; async/await</a>
 
     <div class="links">
       <div class="icon-container">
