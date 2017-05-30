@@ -51,7 +51,7 @@
   emit(doc.type, doc.name)
 }
 </code></pre>
-<p>This View function will run on every doc in the database, and emit a key of the <code>type</code> with a value of the <code>name</code>. So then you can &quot;query&quot; this view by providing a <code>key</code> you are interested in, such as a <code>&quot;person&quot;</code>. So this this view would return all of the <code>name</code>s of the docs who have a type equal to <code>&quot;person&quot;</code>.</p>
+<p>This View function will run on every doc in the database, and emit a key of the <code>type</code> with a value of the <code>name</code>. So then you can &quot;query&quot; this view by providing a <code>key</code> you are interested in, such as <code>&quot;person&quot;</code>. So then this view would return all of the <code>name</code>s of the docs who have a type equal to <code>&quot;person&quot;</code>.</p>
 <p>As Views are created and documents adjusted, the results of these Views are cached so you will get near instant results.</p>
 <h2>The problem</h2>
 <p>There was a database full of records which contained a date field. As a contrived example, lets assume they looked like this:</p>

@@ -25,7 +25,7 @@ function (doc) {
 }
 ```
 
-This View function will run on every doc in the database, and emit a key of the `type` with a value of the `name`. So then you can "query" this view by providing a `key` you are interested in, such as a `"person"`. So this this view would return all of the `name`s of the docs who have a type equal to `"person"`.
+This View function will run on every doc in the database, and emit a key of the `type` with a value of the `name`. So then you can "query" this view by providing a `key` you are interested in, such as `"person"`. So then this view would return all of the `name`s of the docs who have a type equal to `"person"`.
 
 As Views are created and documents adjusted, the results of these Views are cached so you will get near instant results.
 
