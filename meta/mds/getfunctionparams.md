@@ -63,7 +63,7 @@ fnString = fnString.replace(match, `:~:${cache.push(match)}:~:`)
 // results in "function getThing(a = {}, b = :~:1:~:) {\n  return a[b]\n}"
 ```
 
-We find a match that gives us the string portion of the function. We than do a replace on that match, and replace it with a fancy looking string along with an array index. The index can be used later to retrieve the replaced content from a cache array (if need be).
+We find a match that gives us the string portion of the function. We then do a replace on that match, and replace it with a fancy looking string along with an array index. The index can be used later to retrieve the replaced content from a cache array (if need be).
 
 Similarly, we find and replace all blocks of arrays, then braces.
 

@@ -79,7 +79,7 @@
 fnString = fnString.replace(match, <span class="hljs-string">`:~:<span class="hljs-subst">${cache.push(match)}</span>:~:`</span>)
 <span class="hljs-comment">// results in "function getThing(a = {}, b = :~:1:~:) {\n  return a[b]\n}"</span>
 </code></pre>
-<p>We find a match that gives us the string portion of the function. We than do a replace on that match, and replace it with a fancy looking string along with an array index. The index can be used later to retrieve the replaced content from a cache array (if need be).</p>
+<p>We find a match that gives us the string portion of the function. We then do a replace on that match, and replace it with a fancy looking string along with an array index. The index can be used later to retrieve the replaced content from a cache array (if need be).</p>
 <p>Similarly, we find and replace all blocks of arrays, then braces.</p>
 <pre class="hljs"><code>fnString = fnString.replace(arrayMatch, <span class="hljs-string">`:~:<span class="hljs-subst">${cache.push(arrayMatch)}</span>:~:`</span>)
 <span class="hljs-comment">// "function getThing(a = {}, b = :~:1:~:) {\n  return a:~:2:~:\n}"</span>
