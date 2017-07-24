@@ -86,7 +86,7 @@
 <p>Now my view doesn't care what day it happens to be. All it knows is there are docs that have a <code>createdOn</code> field, and we want to <code>emit</code> all of them as keys. As mentioned above, you can pass in keys that you care about and Couch will filter the View results accordingly. So we move the concept of &quot;today&quot; to the client and can now query the View like so: <code>getByDate?key=&quot;2017-05-29&quot;</code>. This will return all records with <code>createdOn</code> equal to the date passed in. No more worrying about the cached results going out of date, since it's now up to the client to pass in the correct date. Couch will happily chug along.</p>
 <p>Again, it seems so obvious in hindsight, but the symptoms weren't immediately obvious, so I thought this might be helpful to someone else out there.</p>
 
-    
+    <a class="btn right" href="/posts/getfunctionparams">get-function-params &rightarrow;</a>
     <a class="btn left" href="/posts/asyncawait">&leftarrow; async/await</a>
 
     <div class="links">

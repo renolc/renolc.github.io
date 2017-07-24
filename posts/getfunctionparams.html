@@ -1,0 +1,137 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="alternate" type="application/rss+xml" title="rss" href="/rss.xml"/>
+  <title>renolc - get-function-params</title>
+</head>
+
+<body>
+  <div class="content">
+    <svg style="position: absolute; width: 0; height: 0; overflow: hidden;" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <defs>
+        <symbol id="icon-twitter-square" viewBox="0 0 24 28">
+          <title>twitter-square</title>
+          <path d="M20 9.531c-0.594 0.266-1.219 0.438-1.891 0.531 0.688-0.406 1.203-1.062 1.453-1.828-0.641 0.375-1.344 0.656-2.094 0.797-0.594-0.641-1.453-1.031-2.391-1.031-1.813 0-3.281 1.469-3.281 3.281 0 0.25 0.016 0.516 0.078 0.75-2.734-0.141-5.156-1.437-6.781-3.437-0.281 0.484-0.453 1.062-0.453 1.656 0 1.141 0.531 2.141 1.422 2.734-0.547-0.016-1.062-0.172-1.563-0.406v0.031c0 1.594 1.203 2.922 2.703 3.219-0.281 0.078-0.5 0.125-0.797 0.125-0.203 0-0.406-0.031-0.609-0.063 0.422 1.297 1.625 2.25 3.063 2.281-1.125 0.875-2.531 1.406-4.078 1.406-0.266 0-0.531-0.016-0.781-0.047 1.453 0.922 3.172 1.469 5.031 1.469 6.031 0 9.344-5 9.344-9.344 0-0.141 0-0.281-0.016-0.422 0.641-0.453 1.203-1.031 1.641-1.703zM24 6.5v15c0 2.484-2.016 4.5-4.5 4.5h-15c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5h15c2.484 0 4.5 2.016 4.5 4.5z"></path>
+        </symbol>
+        <symbol id="icon-github-square" viewBox="0 0 24 28">
+          <title>github-square</title>
+          <path d="M8.109 18.75v0c0.031-0.047 0.016-0.141-0.047-0.203-0.078-0.063-0.172-0.078-0.219-0.031-0.031 0.047-0.016 0.141 0.047 0.203 0.078 0.063 0.172 0.078 0.219 0.031zM7.672 18.109c-0.047-0.063-0.125-0.094-0.187-0.063-0.047 0.031-0.047 0.125 0 0.187 0.063 0.078 0.141 0.109 0.187 0.078v0c0.047-0.031 0.047-0.125 0-0.203zM7.031 17.484v0c0.016-0.031-0.016-0.094-0.078-0.125-0.047-0.016-0.109-0.016-0.125 0.031-0.031 0.047 0 0.094 0.063 0.125 0.063 0.016 0.125 0.016 0.141-0.031zM7.359 17.844v0c0.031-0.031 0.031-0.109-0.031-0.156-0.047-0.063-0.125-0.078-0.156-0.047-0.047 0.047-0.031 0.109 0.016 0.172 0.047 0.047 0.125 0.078 0.172 0.031zM8.703 19.016v0c0.016-0.063-0.047-0.141-0.141-0.172s-0.172 0-0.203 0.063c-0.016 0.063 0.047 0.141 0.141 0.172s0.172 0 0.203-0.063zM9.359 19.063v0c0-0.063-0.078-0.125-0.187-0.125-0.094 0-0.156 0.063-0.156 0.125s0.078 0.125 0.172 0.125 0.172-0.063 0.172-0.125zM9.969 18.953v0c-0.016-0.063-0.109-0.094-0.203-0.078s-0.156 0.078-0.141 0.141 0.094 0.109 0.187 0.094 0.156-0.094 0.156-0.156zM20 14c0-4.422-3.578-8-8-8s-8 3.578-8 8c0 3.531 2.297 6.531 5.469 7.594 0.406 0.078 0.547-0.172 0.547-0.391 0-0.187 0-0.812-0.016-1.484 0 0-2.219 0.484-2.688-0.953 0 0-0.359-0.922-0.891-1.156 0 0-0.719-0.5 0.063-0.5 0 0 0.781 0.063 1.219 0.828 0.703 1.234 1.875 0.875 2.328 0.672 0.078-0.516 0.281-0.875 0.516-1.078-1.781-0.203-3.656-0.891-3.656-3.953 0-0.875 0.313-1.578 0.828-2.141-0.078-0.203-0.359-1.016 0.078-2.125 0.672-0.203 2.203 0.828 2.203 0.828 0.641-0.187 1.313-0.266 2-0.266s1.359 0.078 2 0.266c0 0 1.531-1.031 2.203-0.828 0.438 1.109 0.156 1.922 0.078 2.125 0.516 0.562 0.828 1.266 0.828 2.141 0 3.078-1.875 3.75-3.656 3.953 0.281 0.25 0.547 0.734 0.547 1.484 0 1.062-0.016 1.922-0.016 2.188 0 0.219 0.141 0.469 0.547 0.391 3.172-1.062 5.469-4.062 5.469-7.594zM24 6.5v15c0 2.484-2.016 4.5-4.5 4.5h-15c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5h15c2.484 0 4.5 2.016 4.5 4.5z"></path>
+        </symbol>
+        <symbol id="icon-rss-square" viewBox="0 0 24 28">
+          <title>rss-square</title>
+          <path d="M8 20c0-1.109-0.891-2-2-2s-2 0.891-2 2 0.891 2 2 2 2-0.891 2-2zM13.484 21.469c-0.266-4.844-4.109-8.687-8.953-8.953-0.141-0.016-0.281 0.047-0.375 0.141s-0.156 0.219-0.156 0.359v2c0 0.266 0.203 0.484 0.469 0.5 3.203 0.234 5.781 2.812 6.016 6.016 0.016 0.266 0.234 0.469 0.5 0.469h2c0.141 0 0.266-0.063 0.359-0.156s0.156-0.234 0.141-0.375zM19.484 21.484c-0.266-8.125-6.844-14.703-14.969-14.969-0.156-0.016-0.266 0.031-0.359 0.141-0.094 0.094-0.156 0.219-0.156 0.359v2c0 0.266 0.219 0.484 0.484 0.5 6.484 0.234 11.766 5.516 12 12 0.016 0.266 0.234 0.484 0.5 0.484h2c0.141 0 0.266-0.063 0.359-0.156 0.109-0.094 0.156-0.219 0.141-0.359zM24 6.5v15c0 2.484-2.016 4.5-4.5 4.5h-15c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5h15c2.484 0 4.5 2.016 4.5 4.5z"></path>
+        </symbol>
+        <symbol id="icon-pencil-square" viewBox="0 0 24 28">
+          <title>pencil-square</title>
+          <path d="M6.312 17.313l2.375 2.375-0.812 0.812h-0.875v-1.5h-1.5v-0.875zM12.781 11.219c0.125 0.109 0.094 0.328-0.047 0.469l-4.547 4.547c-0.141 0.141-0.359 0.172-0.469 0.047-0.125-0.109-0.094-0.328 0.047-0.469l4.547-4.547c0.141-0.141 0.359-0.172 0.469-0.047zM8.5 22l8.5-8.5-4.5-4.5-8.5 8.5v4.5h4.5zM18 12.5l1.437-1.437c0.578-0.578 0.578-1.547 0-2.125l-2.375-2.375c-0.578-0.578-1.547-0.578-2.125 0l-1.437 1.437zM24 6.5v15c0 2.484-2.016 4.5-4.5 4.5h-15c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5h15c2.484 0 4.5 2.016 4.5 4.5z"></path>
+        </symbol>
+        <symbol id="icon-envelope-square" viewBox="0 0 24 28">
+          <title>envelope-square</title>
+          <path d="M19.5 2c2.484 0 4.5 2.016 4.5 4.5v15c0 2.484-2.016 4.5-4.5 4.5h-15c-2.484 0-4.5-2.016-4.5-4.5v-15c0-2.484 2.016-4.5 4.5-4.5h15zM20 18.5v-6.813c-0.297 0.328-0.625 0.625-1 0.859-1.469 0.969-2.984 1.875-4.438 2.875-0.734 0.516-1.641 1.078-2.562 1.078v0 0 0 0c-0.922 0-1.828-0.562-2.562-1.078-1.453-1-2.984-1.891-4.438-2.891-0.359-0.234-0.641-0.578-1-0.844v6.813c0 0.828 0.672 1.5 1.5 1.5h13c0.828 0 1.5-0.672 1.5-1.5zM20 9.547c0-0.844-0.625-1.547-1.5-1.547h-13c-0.828 0-1.5 0.672-1.5 1.5 0 0.844 0.875 1.766 1.531 2.203 1.375 0.922 2.797 1.781 4.172 2.688 0.594 0.391 1.578 1.109 2.297 1.109s1.703-0.719 2.297-1.109c1.391-0.906 2.781-1.797 4.172-2.719 0.609-0.406 1.531-1.344 1.531-2.125z"></path>
+        </symbol>
+      </defs>
+    </svg>
+
+    <h1 class="title"><a href="../">Phillip "renolc" Gibson</a></h1>
+    <h1>get-function-params</h1>
+<h2>Mon Jul 24 2017</h2>
+<p>Continuing my (pseudo) series on <a href="https://renolc.github.io/posts/introducing-chalkblog"><code>chalk-blog</code></a> related projects, here's a quick overview of <a href="https://github.com/renolc/get-function-params"><code>get-function-params</code></a>.</p>
+<p>As the name implies, <code>get-function-params</code> is a utility used to obtain a list of parameters given a function. This was necessary for my <code>ezcli</code> package, because I didn't want to require users to declare parameters twice (once in the function itself, and once as command metadata). Instead, I just wanted to use the defined function parameters directly.</p>
+<p>And thus I dived into the world of parameter parsing in JavaScript. Turns out, it's a hard problem to solve.</p>
+<p>JavaScript doesn't have any sort of <em>real</em> reflection, but I quickly discovered you can convert any function directly into a string which will reveal the complete implementation:</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> sayHello = <span class="hljs-function">(<span class="hljs-params">name</span>) =&gt;</span> <span class="hljs-string">`Hello, <span class="hljs-subst">${name}</span>!`</span>
+
+<span class="hljs-comment">// prints '(name) =&gt; `Hello, ${name}!`'</span>
+<span class="hljs-built_in">console</span>.log(sayHello.toString())
+</code></pre>
+<p>I first tried to be clever with my parsing and just tried to do a series of <code>split</code>s and <code>reduce</code>s, but that didn't last very long. There were just too many different ways to define functions (vanilla, with default arguments, arrow functions, generators, implicit return single line arrow functions, etc). Things got <em>especially</em> hairy when you considered the possibility of default arguments being complete functions <em>themselves</em>:</p>
+<pre class="hljs"><code><span class="hljs-keyword">const</span> executeFn = <span class="hljs-function">(<span class="hljs-params">fn = (</span>) =&gt;</span> <span class="hljs-string">'nop'</span>) =&gt; fn()
+
+<span class="hljs-comment">// or without arrow functions</span>
+<span class="hljs-keyword">var</span> executeFn = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">fn = function (</span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">'nop'</span> }) {
+  <span class="hljs-keyword">return</span> fn()
+}
+</code></pre>
+<p>As you can see, naive string splitting might be a bit too optimistic and exclude too many edge cases. So instead, I had to turn to the much more powerful (and complicated) regex.</p>
+<p>Now, I'm not particularly <em>good</em> at regex. Thankfully, sites like <a href="https://regex101.com/">regex101.com</a> exist to let me experiment and give me real-time feedback. But even with the power of regex, it was a very difficult thing for me to figure out. Perhaps someone more familiar with complex expressions could solve it, but my code was becoming very hard for me to parse and fix and I kept finding more and more edge cases I had to address.</p>
+<p>It occurred to me that if I could just remove the parts of the function that I knew I didn't care about, I could reduce the function string into something more manageable. With this approach, instead of writing a complex, monolithic expression that had to work in all cases, I could chain together a series of much smaller and simpler ones -- each pass reducing the overall complexity of the remaining string for the following expression. By the end of the chain, I should have something much easier to deal with.</p>
+<p>To me, this felt a lot like &quot;encoding.&quot; I'm not sure if that term is technically correct, but I rolled with it. The idea is actually quite simple when you think about it. Lets start with this function:</p>
+<pre class="hljs"><code><span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> all the code in the remainder of this post will be more pseudo-code</span>
+<span class="hljs-comment">// rather than completely elaborated examples. This is for high level demo</span>
+<span class="hljs-comment">// purposes. If you want a more specific example, look at the code on github.</span>
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getThing</span> (<span class="hljs-params">a = {}, b = <span class="hljs-string">'key'</span></span>) </span>{
+  <span class="hljs-keyword">return</span> a[b]
+}
+</code></pre>
+<p>So first thing's first, we convert it into a string:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> fnString = getThing.toString()
+<span class="hljs-comment">// "function getThing(a = {}, b = 'key') {\n  return a[b]\n}"</span>
+</code></pre>
+<p>Now we can start pruning away chunks of this that we don't care about (at least right now). For example, all the strings. This is a much simpler regex, and doing a <code>replace</code> will result in:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> match = <span class="hljs-regexp">/'.*?'/</span>.exec(fnString)
+
+<span class="hljs-keyword">var</span> cache = []
+
+fnString = fnString.replace(match, <span class="hljs-string">`:~:<span class="hljs-subst">${cache.push(match)}</span>:~:`</span>)
+<span class="hljs-comment">// results in "function getThing(a = {}, b = :~:1:~:) {\n  return a[b]\n}"</span>
+</code></pre>
+<p>We find a match that gives us the string portion of the function. We than do a replace on that match, and replace it with a fancy looking string along with an array index. The index can be used later to retrieve the replaced content from a cache array (if need be).</p>
+<p>Similarly, we find and replace all blocks of arrays, then braces.</p>
+<pre class="hljs"><code>fnString = fnString.replace(arrayMatch, <span class="hljs-string">`:~:<span class="hljs-subst">${cache.push(arrayMatch)}</span>:~:`</span>)
+<span class="hljs-comment">// "function getThing(a = {}, b = :~:1:~:) {\n  return a:~:2:~:\n}"</span>
+
+fnString = fnString.replace(braceMatch, <span class="hljs-string">`:~:<span class="hljs-subst">${cache.push(braceMatch)}</span>:~:`</span>)
+<span class="hljs-comment">// "function getThing(a = :~:3:~:, b = :~:1:~:) :~:4:~:"</span>
+</code></pre>
+<p>After all of that, we now have a very simple string where we just have to detect the parentheses and bam, we have the parameter list:</p>
+<pre class="hljs"><code><span class="hljs-keyword">var</span> params = fnString.match(parenExpression)
+<span class="hljs-comment">// params = "a = :~:3:~:, b = :~:1:~:"</span>
+</code></pre>
+<p>The final step is to then split up the array list and decode as needed:</p>
+<pre class="hljs"><code>params = params.split(<span class="hljs-string">','</span>)
+  .map(<span class="hljs-function">(<span class="hljs-params">i</span>) =&gt;</span> {
+    <span class="hljs-keyword">var</span> id
+    <span class="hljs-keyword">while</span> ((id = i.match(encodedExpression)) !== <span class="hljs-literal">null</span>) {
+      i = i.replace(<span class="hljs-string">`:~:<span class="hljs-subst">${id}</span>:~:`</span>, cache[id<span class="hljs-number">-1</span>])
+    }
+    <span class="hljs-keyword">return</span> i
+  })
+
+<span class="hljs-comment">// params = ["a = {}", "b = 'key'"]</span>
+</code></pre>
+<p>And there you have it! Please note the actual code is more complicated than indicated above, and there are more expressions I didn't address here (namely around detecting/parsing arrow functions), as well as a <em>ton</em> of edge cases that I have been correcting as I discover them. There are probably lots I still haven't seen yet.</p>
+<p>As mentioned before, I'm not sure if this is the <em>best</em> approach, but it has been working for my purposes so far.</p>
+
+    
+    <a class="btn left" href="/posts/couch-views-and-today">&leftarrow; Couch Views and Today</a>
+
+    <div class="links">
+      <div class="icon-container">
+        <a href="mailto:gibson.phillip.j@gmail.com" class="icon-link"><svg class="icon icon-envelope-square"><use xlink:href="#icon-envelope-square"></use></svg></a>
+        <div class="icon-desc">email</div>
+      </div>
+      <div class="icon-container">
+        <a href="https://stackoverflow.com/cv/phillipgibson" class="icon-link"><svg class="icon icon-pencil-square"><use xlink:href="#icon-pencil-square"></use></svg></a>
+        <div class="icon-desc">resume</div>
+      </div>
+      <div class="icon-container">
+        <a href="https://github.com/renolc" class="icon-link"><svg class="icon icon-github-square"><use xlink:href="#icon-github-square"></use></svg></a>
+        <div class="icon-desc">github</div>
+      </div>
+      <div class="icon-container">
+        <a href="https://twitter.com/renolc" class="icon-link"><svg class="icon icon-twitter-square"><use xlink:href="#icon-twitter-square"></use></svg></a>
+        <div class="icon-desc">twitter</div>
+      </div>
+      <div class="icon-container">
+        <a href="../rss.xml" class="icon-link"><svg class="icon icon-rss-square"><use xlink:href="#icon-rss-square"></use></svg></a>
+        <div class="icon-desc">rss</div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -4,7 +4,7 @@
         <description><![CDATA[A mostly javascript tech blog]]></description>
         <link>https://renolc.github.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Tue, 30 May 2017 02:05:12 GMT</lastBuildDate>
+        <lastBuildDate>Mon, 24 Jul 2017 13:14:07 GMT</lastBuildDate>
         <atom:link href="https://renolc.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Hello, World!]]></title>
@@ -61,6 +61,13 @@
             <link>https://renolc.github.io/posts/couch-views-and-today</link>
             <guid isPermaLink="true">https://renolc.github.io/posts/couch-views-and-today</guid>
             <pubDate>Mon, 29 May 2017 04:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[get-function-params]]></title>
+            <description><![CDATA[Continuing my (pseudo) series on <a href="https://renolc.github.io/posts/introducing-chalkblog"><code>chalk-blog</code></a> related projects, here's a quick overview of <a href="https://github.com/renolc/get-function-params"><code>get-function-params</code></a>.]]></description>
+            <link>https://renolc.github.io/posts/getfunctionparams</link>
+            <guid isPermaLink="true">https://renolc.github.io/posts/getfunctionparams</guid>
+            <pubDate>Mon, 24 Jul 2017 04:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
