@@ -7,12 +7,13 @@ I have a passion for continued learning, and thus, I spend a lot of my free time
 
 |Recently Used&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Learning&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|It's been a while |
 |-|-|-|
-|JavaScript/Node |Kotlin    |Java              |
-|Ember           |Go        |C/C++             |
-|Angular 1.x     |          |Python            |
-|Ruby/Rails      |          |PHP               |
-|CouchDb         |          |VB.NET            |
-|Postgres        |          |C#                |
+|JavaScript/Node |Kotlin    |Java  |
+|Ember           |Go        |C/C++ |
+|React           |          |Python|
+|Angular 1.x     |          |PHP   |
+|CouchDb         |          |VB.NET|
+|Postgres        |          |C#    |
+|Ruby/Rails      |          |      |
 
 ## Experience
 
