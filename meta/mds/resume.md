@@ -1,4 +1,4 @@
-# Phillip Gibson
+# Resume
 ## Software Engineer
 
 I have a passion for continued learning, and thus, I spend a lot of my free time experimenting. This could be with new languages or frameworks, or just trying something I never have before.
