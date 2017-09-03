@@ -11,8 +11,8 @@ I have a passion for continued learning, and thus, I spend a lot of my free time
 |Ember           |Go        |C/C++             |
 |Angular 1.x     |          |Python            |
 |Ruby/Rails      |          |PHP               |
-|CouchDb         |          |                  |
-|Postgres        |          |                  |
+|CouchDb         |          |VB.NET            |
+|Postgres        |          |C#                |
 
 ## Experience
 
