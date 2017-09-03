@@ -27,7 +27,7 @@ I have a passion for continued learning, and thus, I spend a lot of my free time
 ## Education
 
 **B.S. Software Engineering**<br>
-_Rochester Institute of Technology_ - Class of 2011<br>
+[_Rochester Institute of Technology_][5] - Class of 2011<br>
 Minors in Computer Science and Computer Engineering
 
 
@@ -35,3 +35,4 @@ Minors in Computer Science and Computer Engineering
 [2]: http://www.tabularasahealthcare.com
 [3]: https://www.crunchbase.com/organization/spruce-media#/entity
 [4]: https://www.blackbaud.com
+[5]: http://www.rit.edu
