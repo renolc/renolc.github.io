@@ -16,7 +16,7 @@ I have a passion for continued learning, and thus, I spend a lot of my free time
 
 ## Experience
 
-|Title|Company|Tech||
+|||||
 |-|-|-|-:|
 |Software Engineer|[**CrowdOx**][1]|`ruby/rails`, `ember`, `postgres`|Jul 2017 &rightarrow; Current|
 |Software Engineer II|[**Tabula Rasa Healthcare**][2]|`node`, `angular 1.x`, `couchdb`|Aug 2015 &rightarrow; Jul 2017|
