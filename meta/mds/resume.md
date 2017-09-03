@@ -19,7 +19,7 @@ I have a passion for continued learning, and thus, I spend a lot of my free time
 |||||
 |-|-|-|-:|
 |Software Engineer|[**CrowdOx**][1]|`ror`, `ember`, `postgres`|Jul 2017 &rightarrow; Current|
-|Software Engineer II|[**Tabula Rasa Healthcare**][2]|`node`, `angular`, `couchdb`|Aug 2015 &rightarrow; Jul 2017|
+|Software Engineer II|[**Tabula Rasa Healthcare**][2]&nbsp;|`node`, `angular`, `couchdb`|Aug 2015 &rightarrow; Jul 2017|
 |Freelance Software Engineer&nbsp;|[**CrowdOx**][1]|`ror`, `ember`, `postgres`|Jul 2015 &rightarrow; Jul 2017|
 |Software Engineer|[**Spruce Media**][3]|`ror`, `ember`, `postgres`|May 2014 &rightarrow; Jun 2015|
 |Software Engineer II|[**Blackbaud**][4]|`js`, `vb.net`, `ms-sql`|Aug 2011 &rightarrow; May 2014|
