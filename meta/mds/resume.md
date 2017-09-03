@@ -10,7 +10,7 @@ I have a passion for continued learning, and thus, I spend a lot of my free time
 |JavaScript/Node |Kotlin    |Java              |
 |Ember           |Go        |C/C++             |
 |Angular 1.x     |          |Python            |
-|Ruby/Rails      |          |                  |
+|Ruby/Rails      |          |PHP               |
 |CouchDb         |          |                  |
 |Postgres        |          |                  |
 
