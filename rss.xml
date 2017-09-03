@@ -4,7 +4,7 @@
         <description><![CDATA[A mostly javascript tech blog]]></description>
         <link>https://renolc.github.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 03 Sep 2017 19:31:28 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 03 Sep 2017 19:32:27 GMT</lastBuildDate>
         <atom:link href="https://renolc.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Hello, World!]]></title>
@@ -70,7 +70,7 @@
             <pubDate>Mon, 24 Jul 2017 04:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[Phillip Gibson]]></title>
+            <title><![CDATA[Resume]]></title>
             <description><![CDATA[I have a passion for continued learning, and thus, I spend a lot of my free time experimenting. This could be with new languages or frameworks, or just trying something I never have before.]]></description>
             <link>https://renolc.github.io/posts/resume</link>
             <guid isPermaLink="true">https://renolc.github.io/posts/resume</guid>
