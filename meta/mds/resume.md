@@ -17,12 +17,12 @@ I have a passion for continued learning, and thus, I spend a lot of my free time
 
 ## Experience
 
-||||
-|-|-|-:|
-|[**CrowdOx**][1]|`ruby/rails`, `ember`, `postgres`|Jul 2015 &rightarrow; Current|
-|[**Tabula Rasa Healthcare**][2]&nbsp;&nbsp;&nbsp;|`node`, `angular 1.x`, `couchdb`|Aug 2015 &rightarrow; Jul 2017|
-|[**Spruce Media**][3]|`ruby/rails`, `ember`, `postgres`|May 2014 &rightarrow; Jun 2015|
-|[**Blackbaud**][4]|`javascript`, `vb.net`, `sql-server`&nbsp;&nbsp;&nbsp;|Aug 2011 &rightarrow; May 2014|
+||||||
+|-|-|-:|-:|-:|
+|[**CrowdOx**][1]|`ruby/rails`, `ember`, `postgres`|Jul 2015 |&rightarrow;| Current|
+|[**Tabula Rasa Healthcare**][2]&nbsp;&nbsp;&nbsp;|`node`, `angular 1.x`, `couchdb`|Aug 2015 |&rightarrow;| Jul 2017|
+|[**Spruce Media**][3]|`ruby/rails`, `ember`, `postgres`|May 2014 |&rightarrow;| Jun 2015|
+|[**Blackbaud**][4]|`javascript`, `vb.net`, `sql-server`&nbsp;&nbsp;&nbsp;|Aug 2011 |&rightarrow;| May 2014|
 
 ## Education
 
