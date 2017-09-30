@@ -1,5 +1,5 @@
 # get-function-params
-## Mon Jul 24 2017
+## Mon Jul 25 2017
 
 Continuing my (pseudo) series on [`chalk-blog`](https://renolc.github.io/posts/introducing-chalkblog) related projects, here's a quick overview of [`get-function-params`](https://github.com/renolc/get-function-params).
 
