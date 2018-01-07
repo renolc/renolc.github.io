@@ -15,4 +15,4 @@ So without further ado, here is my January creation: Battle Pong.
 - Mouse - move
 - R - reset
 - E/N/H - Easy/Normal/Hard AI
-- source: https://github.com/renolc/renolc.github.io/blob/master/js/1gam/battle-pong.js
+- [source](https://github.com/renolc/renolc.github.io/blob/master/js/1gam/battle-pong.js)
