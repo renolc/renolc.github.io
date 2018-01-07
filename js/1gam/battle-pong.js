@@ -210,7 +210,7 @@ canvas.onclick = () => {
 
 document.onkeypress = ({ code }) => {
   switch (code) {
-    case 'Space':
+    case 'KeyP':
       state.paused = !state.paused
       break
 
