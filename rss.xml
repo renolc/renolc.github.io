@@ -4,7 +4,7 @@
         <description><![CDATA[A mostly javascript tech blog]]></description>
         <link>https://renolc.github.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 07 Jan 2018 14:40:15 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 01 Feb 2018 13:51:22 GMT</lastBuildDate>
         <atom:link href="https://renolc.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Hello, World!]]></title>
@@ -75,6 +75,13 @@
             <link>https://renolc.github.io/posts/1gam-january-battle-pong</link>
             <guid isPermaLink="true">https://renolc.github.io/posts/1gam-january-battle-pong</guid>
             <pubDate>Sun, 07 Jan 2018 05:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[1GAM February: Obligatory Zombie Game]]></title>
+            <description><![CDATA[Oh no, it's that darned zombie apocalypse... <em>again</em>. Good thing I have my trusty sidearm on me -- this thing packs quite a punch! Unfortunately, the trigger is jammed so I can't stop shooting. Perhaps some of these zambos will have some parts on them so I can at least increase the fire rate. Here's to the end of the world.]]></description>
+            <link>https://renolc.github.io/posts/1gam-february-obligatory-zombie-game</link>
+            <guid isPermaLink="true">https://renolc.github.io/posts/1gam-february-obligatory-zombie-game</guid>
+            <pubDate>Thu, 01 Feb 2018 05:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>
