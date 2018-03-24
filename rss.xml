@@ -4,7 +4,7 @@
         <description><![CDATA[A mostly javascript tech blog]]></description>
         <link>https://renolc.github.io</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 01 Feb 2018 13:51:22 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 24 Mar 2018 03:11:00 GMT</lastBuildDate>
         <atom:link href="https://renolc.github.io/rss.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Hello, World!]]></title>
@@ -82,6 +82,13 @@
             <link>https://renolc.github.io/posts/1gam-february-obligatory-zombie-game</link>
             <guid isPermaLink="true">https://renolc.github.io/posts/1gam-february-obligatory-zombie-game</guid>
             <pubDate>Thu, 01 Feb 2018 05:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[1GAM March: Punching Simulator 3000]]></title>
+            <description><![CDATA[So this month I spent way too much time playing around with engine structures and basic prototypes. So I don't have a full game, but instead here is one of the little demos I was playing around with trying to make something fun.]]></description>
+            <link>https://renolc.github.io/posts/1gam-march-punching-simulator-3000</link>
+            <guid isPermaLink="true">https://renolc.github.io/posts/1gam-march-punching-simulator-3000</guid>
+            <pubDate>Fri, 23 Mar 2018 04:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

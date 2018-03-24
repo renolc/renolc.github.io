@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/style.css">
   <link rel="alternate" type="application/rss+xml" title="rss" href="/rss.xml"/>
-  <title>renolc - 1GAM February: Obligatory Zombie Game</title>
+  <title>renolc - 1GAM March: Punching Simulator 3000</title>
 </head>
 
 <body>
@@ -36,25 +36,29 @@
     </svg>
 
     <h1 class="title"><a href="../">Phillip "renolc" Gibson</a></h1>
-    <h1>1GAM February: Obligatory Zombie Game</h1>
-<h2>Thu Feb 01 2018</h2>
-<p>Oh no, it's that darned zombie apocalypse... <em>again</em>. Good thing I have my trusty sidearm on me -- this thing packs quite a punch! Unfortunately, the trigger is jammed so I can't stop shooting. Perhaps some of these zambos will have some parts on them so I can at least increase the fire rate. Here's to the end of the world.</p>
+    <h1>1GAM March: Punching Simulator 3000</h1>
+<h2>Fri Mar 23 2018</h2>
+<p>So this month I spent way too much time playing around with engine structures and basic prototypes. So I don't have a full game, but instead here is one of the little demos I was playing around with trying to make something fun.</p>
 <p><canvas id="game"></canvas></p>
-<script type="module" src="../js/1gam/zambos.js"></script>
+<script type="module" src="../js/1gam/march/2.5d.js"></script>
 <ul>
-<li>Mouse - aim</li>
-<li>W/A/S/D - move</li>
-<li>R - reset</li>
-<li>P - pause/resume</li>
-<li><a href="https://github.com/renolc/renolc.github.io/blob/master/js/1gam/zambos.js">source</a></li>
+<li>Up/Down/Left/Right - move</li>
+<li>W/A/S/D - punch up/left/down/right</li>
+<li>P - spawn enemy box thing</li>
+<li>R - remove all enemy box things</li>
+<li><a href="https://github.com/renolc/renolc.github.io/blob/master/js/1gam/2.5d/">source</a></li>
 </ul>
-<p>For this game, I'm experimenting with <code>type=&quot;module&quot;</code> scripts. This should essentially allow me to write my code like I would for Node, but on the Browser without having to bundle. I'm certain there are some browsers where this won't work, but as I mentioned last month, I'm only testing on latest Chrome and it works there. :P</p>
-<p>Since I can use modules now, it allowed me to split out some code into separate files. I took some of my boilerplate from last month, cleaned it up a bit, and slapped it into an <a href="https://www.npmjs.com/package/rengen">npm module</a>. Then, using <a href="https://unpkg.com/">unpkg</a> I can import my &quot;engine&quot; code from a cdn and just focus on the game specific code itself. Pretty neat.</p>
-<p>My &quot;engine&quot; is still fairly barebones. I can foresee me updating it as I continue building different types of games each month, so I didn't bother documenting it yet. Maybe it'll turn into something useful though.</p>
-<p>I have a lot more game ideas and experiments that I plan to flesh out into small prototypes, so I'll see you again next month!</p>
+<p>Not much to this &quot;game&quot;, as it was more of a test rather than a real game. There's no goal, or points, or anything. You &quot;win&quot; by punching things and having fun. You lose if you get stuck or bored? Idk, whatever. Do what you want.</p>
+<p>So structure wise, this was built with a test in entity composition. There are components which are basic building structures of functionality, like rendering a box shape, or collisions, or keyboard input. Entities are aggregations of components that are instantiated into real objects the game engine will manage.</p>
+<p>Components can have arbitrary properties and functions. Entities will mix all of its defining components into a single object, so you do need to be considerate of what properties and functions you define, as collisions are entirely possible.</p>
+<p>There are two special functions though, <code>step</code>, and <code>draw</code>. These are handled differently, as any component can define them and they will all be called by the engine at defined intervals (<code>step</code> every simulation step and <code>draw</code> every frame). These functions are aggregated into a master collection per entity and all of them are called. So you can have multiple components with steps and draws. The idea being you can then define things in relatively small, discrete simulation/draw steps that only care about themselves, but when combined with other components creates something more interesting.</p>
+<p>Also, this was an experiment in pseudo 3d rendering (more accurately, 2.5d). It's subtle since it's really just two slightly different colored boxes drawn over each other, but when viewed with the right mindset, it appears kind of 3d. The collisions were also made so they appear to have some depth.</p>
+<p>In this specific prototype there isn't much to it, but I did also have something vastly more complicated working:</p>
+<img src="../img/3dish.gif">
+<p>I was very proud of that test. I even added fancy shadowing, so that you could more accurately tell where you were in relation to other boxes. However, I kept having z-ordering issues, and it occurred to me that I was just recreating a crappier version of webgl, so I probably won't do much with it anymore. Maybe I'll try a game in <em>actual</em> webgl though, so that I could do some real 3ding.</p>
 
-    <a class="btn right" href="/posts/1gam-march-punching-simulator-3000">1GAM March: Punching Simulator 3000 &rightarrow;</a>
-    <a class="btn left" href="/posts/1gam-january-battle-pong">&leftarrow; 1GAM January: Battle Pong</a>
+    
+    <a class="btn left" href="/posts/1gam-february-obligatory-zombie-game">&leftarrow; 1GAM February: Obligatory Zombie Game</a>
 
     <div class="links">
       <div class="icon-container">

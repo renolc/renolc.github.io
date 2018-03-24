@@ -1,0 +1,1 @@
+export default (self, i, type = null) => i !== self && (!type || i.type === type)
