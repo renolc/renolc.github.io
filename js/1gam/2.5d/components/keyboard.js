@@ -6,15 +6,15 @@ export default () => ({
   step(game) {
     const { key, entities } = game
 
-    if (key.pressed.KeyD) this.punch('right')
-    if (key.pressed.KeyA) this.punch('left')
-    if (key.pressed.KeyW) this.punch('up')
-    if (key.pressed.KeyS) this.punch('down')
+    if (key.pressed.KeyL) this.punch('right')
+    if (key.pressed.KeyJ) this.punch('left')
+    if (key.pressed.KeyI) this.punch('up')
+    if (key.pressed.KeyK) this.punch('down')
 
-    if (key.held.ArrowRight) this.mx += this.speed
-    if (key.held.ArrowLeft) this.mx -= this.speed
-    if (key.held.ArrowDown) this.my += this.speed
-    if (key.held.ArrowUp) this.my -= this.speed
+    if (key.held.KeyD) this.mx += this.speed
+    if (key.held.KeyA) this.mx -= this.speed
+    if (key.held.KeyS) this.my += this.speed
+    if (key.held.KeyW) this.my -= this.speed
 
     if (key.pressed.KeyP) game.add(Enemy({
       w: 20, l: 15, h: 30,
