@@ -4,7 +4,7 @@
 So this month I spent way too much time playing around with engine structures and basic prototypes. So I don't have a full game, but instead here is one of the little demos I was playing around with trying to make something fun.
 
 <canvas id="game"></canvas>
-<script type="module" src="../js/1gam/2.5d.js"></script>
+<script type="module" src="../js/1gam/2.5d/2.5d.js"></script>
 
 - Up/Down/Left/Right - move
 - W/A/S/D - punch up/left/down/right
