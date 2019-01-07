@@ -38,3 +38,8 @@ Minors in Computer Science and Computer Engineering
 [4]: http://www.tabularasahealthcare.com
 [5]: https://crowdox.com
 [6]: https://stickermule.com
+
+<style>
+  td,th { border-left: 10px solid rgba(0,0,0,0); }
+  tr>td:first-child, tr>th:first-child { border: 0; }
+</style>
