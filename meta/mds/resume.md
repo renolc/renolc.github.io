@@ -5,34 +5,36 @@ I have a passion for continued learning, and thus, I spend a lot of my free time
 
 ## Technology
 
-|Recently Used&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Learning&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|It's been a while |
+|Recently Used|It's been a while |
 |-|-|-|
-|JavaScript/Node |Kotlin    |Java  |
-|Ember           |Go        |C/C++ |
-|React           |          |Python|
-|Angular 1.x     |          |PHP   |
-|CouchDb         |          |VB.NET|
-|Postgres        |          |C#    |
-|Ruby/Rails      |          |      |
+|JavaScript/Node|Java   |
+|React          |C/C++  |
+|Apollo/GraphQL |VB.NET |
+|Postgres       |C#     |
+|Ruby/Rails     |Ember  |
+|GRPC           |Angular|
+|               |CouchDB|
 
 ## Experience
 
 ||||||
 |-|-|-:|-:|:-|
-|[**CrowdOx**][1]|`ruby/rails`, `ember`, `postgres`|Jul 2015 |&rightarrow;| Current|
-|[**Tabula Rasa Healthcare**][2]&nbsp;&nbsp;&nbsp;|`node`, `angular 1.x`, `couchdb`|Aug 2015 |&rightarrow;| Jul 2017|
+|[**Sticker Mule**][6]|`node`, `react`, `postgres`|Jun 2018 |&rightarrow;| Current|
+|[**CrowdOx**][5]|`ruby/rails`, `ember`, `postgres`|Jul 2015 |&rightarrow;| Jun 2018|
+|[**Tabula Rasa Healthcare**][4]&nbsp;&nbsp;&nbsp;|`node`, `angular 1.x`, `couchdb`|Aug 2015 |&rightarrow;| Jul 2017|
 |[**Spruce Media**][3]|`ruby/rails`, `ember`, `postgres`|May 2014 |&rightarrow;| Jun 2015|
-|[**Blackbaud**][4]|`javascript`, `vb.net`, `sql-server`&nbsp;&nbsp;&nbsp;|Aug 2011 |&rightarrow;| May 2014|
+|[**Blackbaud**][2]|`javascript`, `vb.net`, `sql-server`&nbsp;&nbsp;&nbsp;|Aug 2011 |&rightarrow;| May 2014|
 
 ## Education
 
 **B.S. Software Engineering**<br>
-[_Rochester Institute of Technology_][5] - Class of 2011<br>
+[_Rochester Institute of Technology_][1] - Class of 2011<br>
 Minors in Computer Science and Computer Engineering
 
 
-[1]: https://crowdox.com
-[2]: http://www.tabularasahealthcare.com
+[1]: http://www.rit.edu
+[2]: https://www.blackbaud.com
 [3]: https://www.crunchbase.com/organization/spruce-media#/entity
-[4]: https://www.blackbaud.com
-[5]: http://www.rit.edu
+[4]: http://www.tabularasahealthcare.com
+[5]: https://crowdox.com
+[6]: https://stickermule.com
