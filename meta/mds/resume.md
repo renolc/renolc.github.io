@@ -6,7 +6,7 @@ I have a passion for continued learning, and thus, I spend a lot of my free time
 ## Technology
 
 |Recently Used|It's been a while |
-|-|-|-|
+|-|-:|
 |JavaScript/Node|Java   |
 |React          |C/C++  |
 |Apollo/GraphQL |VB.NET |
@@ -19,11 +19,11 @@ I have a passion for continued learning, and thus, I spend a lot of my free time
 
 ||||||
 |-|-|-:|-:|:-|
-|[**Sticker Mule**][6]|`node`, `react`, `postgres`|Jun 2018 |&rightarrow;| Current|
-|[**CrowdOx**][5]|`ruby/rails`, `ember`, `postgres`|Jul 2015 |&rightarrow;| Jun 2018|
-|[**Tabula Rasa Healthcare**][4]&nbsp;&nbsp;&nbsp;|`node`, `angular 1.x`, `couchdb`|Aug 2015 |&rightarrow;| Jul 2017|
-|[**Spruce Media**][3]|`ruby/rails`, `ember`, `postgres`|May 2014 |&rightarrow;| Jun 2015|
-|[**Blackbaud**][2]|`javascript`, `vb.net`, `sql-server`&nbsp;&nbsp;&nbsp;|Aug 2011 |&rightarrow;| May 2014|
+|[**Sticker Mule**][6]          |`node`, `react`, `postgres`         |Jun 2018 |&rightarrow;| Current |
+|[**CrowdOx**][5]               |`ruby/rails`, `ember`, `postgres`   |Jul 2015 |&rightarrow;| Jun 2018|
+|[**Tabula Rasa Healthcare**][4]|`node`, `angular 1.x`, `couchdb`    |Aug 2015 |&rightarrow;| Jul 2017|
+|[**Spruce Media**][3]          |`ruby/rails`, `ember`, `postgres`   |May 2014 |&rightarrow;| Jun 2015|
+|[**Blackbaud**][2]             |`javascript`, `vb.net`, `sql-server`|Aug 2011 |&rightarrow;| May 2014|
 
 ## Education
 
