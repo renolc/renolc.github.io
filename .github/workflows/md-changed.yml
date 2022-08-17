@@ -19,6 +19,7 @@ jobs:
         uses: tj-actions/changed-files@v26.1
         with:
           since_last_remote_commit: true
+          files: raw/**/*.md
 
       - name: Added files
         run: |
