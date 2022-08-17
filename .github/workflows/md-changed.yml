@@ -92,7 +92,7 @@ jobs:
           done
 
       - name: Compile index
-        run: bash script/compile-page.sh raw index
+        run: bash scripts/compile-page.sh raw index
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
