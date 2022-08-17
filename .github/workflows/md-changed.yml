@@ -35,7 +35,9 @@ jobs:
             base_path=$(dirname $file)
             bash scripts/compile-page.sh $base_path $file_name
 
-            if [[ $base_path == "raw/posts*" ]]; then
+            if [[ $base_path == raw/posts* ]]; then
+              echo "here"
+            fi
               echo "adding $file to index"
               bash scripts/add-post-to-index.sh $file_name
             fi
@@ -58,7 +60,7 @@ jobs:
             base_path=$(dirname $file)
             bash scripts/delete-page.sh $base_path $file_name
 
-            if [[ $base_path == "raw/posts*" ]]; then
+            if [[ $base_path == raw/posts* ]]; then
               echo "removing $file from index"
               bash scripts/rm-post-from-index.sh $file_name
             fi
@@ -73,7 +75,7 @@ jobs:
             obase_path=$(dirname $from)
             bash scripts/delete-page.sh $obase_path $ofile_name
 
-            if [[ $obase_path == "raw/posts*" ]]; then
+            if [[ $obase_path == raw/posts* ]]; then
               echo "removing $from from index"
               l=$(grep -Fn $ofile_name raw/index.md | cut -d':' -f1)
               bash scripts/rm-post-from-index.sh $ofile_name
@@ -85,7 +87,7 @@ jobs:
             nbase_path=$(dirname $to)
             bash scripts/compile-page.sh $nbase_path $nfile_name
 
-            if [[ $nbase_path == "raw/posts*" ]]; then
+            if [[ $nbase_path == raw/posts* ]]; then
               echo "adding $to from index"
               bash scripts/add-post-to-index.sh $nfile_name ${l=3}
             fi
