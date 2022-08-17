@@ -15,7 +15,9 @@ jobs:
           fetch-depth: 0
 
       - name: Install pandoc
-        run: sudo apt-get install -y pandoc
+        uses: r-lib/actions/setup-pandoc@v1
+        with:
+          pandoc-version: '2.19.0'
 
       - name: Get changed files
         id: changed-files
