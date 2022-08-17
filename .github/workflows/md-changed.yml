@@ -6,13 +6,18 @@ on:
       - '**.md'
 
 jobs:
-  test:
+  handle-md-changes:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+
+      - name: Install pandoc
+        uses: pandoc/actions/setup
+        with:
+          version: 2.19
 
       - name: Get changed files
         id: changed-files
@@ -25,18 +30,21 @@ jobs:
       - name: Added files
         run: |
           for file in ${{ steps.changed-files.outputs.added_files }}; do
+            echo "$file added"
             sh scripts/compile-page.sh $file
           done
 
       - name: Modified files
         run: |
           for file in ${{ steps.changed-files.outputs.modified_files }}; do
+            echo "$file modified"
             sh scripts/compile-page.sh $file
           done
 
       - name: Deleted files
         run: |
           for file in ${{ steps.changed-files.outputs.deleted_files }}; do
+            echo "$file deleted"
             sh scripts/delete-page.sh $file
           done
 
@@ -44,8 +52,10 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.all_old_new_renamed_files }}; do
             from="$(echo $file | cut -d',' -f1)"
-            to="$(echo $file | cut -d',' -f2)"
+            echo "remove old page $from"
+            sh scripts/delete-page.sh $from
 
-            echo "from $from"
-            echo "to $to"
+            to="$(echo $file | cut -d',' -f2)"
+            echo "add new page $to"
+            sh scripts/compile-page.sh $to
           done
