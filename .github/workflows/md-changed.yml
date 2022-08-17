@@ -31,8 +31,8 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.added_files }}; do
             echo "$file added"
-            file_name=$(basename $1 '.md')
-            base_path=$(dirname $1)
+            file_name=$(basename $file '.md')
+            base_path=$(dirname $file)
             bash scripts/compile-page.sh $base_path $file_name
 
             if [[ $base_path == "/posts*" ]]; then
@@ -45,8 +45,8 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.modified_files }}; do
             echo "$file modified"
-            file_name=$(basename $1 '.md')
-            base_path=$(dirname $1)
+            file_name=$(basename $file '.md')
+            base_path=$(dirname $file)
             bash scripts/compile-page.sh $base_path $file_name
           done
 
@@ -54,8 +54,8 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.deleted_files }}; do
             echo "$file deleted"
-            file_name=$(basename $1 '.md')
-            base_path=$(dirname $1)
+            file_name=$(basename $file '.md')
+            base_path=$(dirname $file)
             bash scripts/delete-page.sh $base_path $file_name
 
             if [[ $base_path == "/posts*" ]]; then
