@@ -43,8 +43,8 @@ jobs:
       - name: Renamed files
         run: |
           for file in ${{ steps.changed-files.outputs.all_old_new_renamed_files }}; do
-            from="$(echo $file | cut -d',' -f1')"
-            to="$(echo $file | cut -d',' -f2')"
+            from="$(echo $file | cut -d',' -f1)"
+            to="$(echo $file | cut -d',' -f2)"
 
             echo "from $from"
             echo "to $to"
