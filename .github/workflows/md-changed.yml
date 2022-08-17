@@ -14,8 +14,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - run: ls -al
-
       - name: Install pandoc
         run: sudo apt-get install -y pandoc
 
@@ -31,21 +29,21 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.added_files }}; do
             echo "$file added"
-            sh scripts/compile-page.sh $file
+            bash scripts/compile-page.sh $file
           done
 
       - name: Modified files
         run: |
           for file in ${{ steps.changed-files.outputs.modified_files }}; do
             echo "$file modified"
-            sh scripts/compile-page.sh $file
+            bash scripts/compile-page.sh $file
           done
 
       - name: Deleted files
         run: |
           for file in ${{ steps.changed-files.outputs.deleted_files }}; do
             echo "$file deleted"
-            sh scripts/delete-page.sh $file
+            bash scripts/delete-page.sh $file
           done
 
       - name: Renamed files
@@ -53,11 +51,11 @@ jobs:
           for file in ${{ steps.changed-files.outputs.all_old_new_renamed_files }}; do
             from="$(echo $file | cut -d',' -f1)"
             echo "remove old page $from"
-            sh scripts/delete-page.sh $from
+            bash scripts/delete-page.sh $from
 
             to="$(echo $file | cut -d',' -f2)"
             echo "add new page $to"
-            sh scripts/compile-page.sh $to
+            bash scripts/compile-page.sh $to
           done
 
       - name: Commit changes
