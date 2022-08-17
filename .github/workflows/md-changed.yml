@@ -17,7 +17,7 @@ jobs:
       - name: Install pandoc
         uses: r-lib/actions/setup-pandoc@v1
         with:
-          pandoc-version: '2.19.0'
+          pandoc-version: '2.19'
 
       - name: Get changed files
         id: changed-files
