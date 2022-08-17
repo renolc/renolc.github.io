@@ -36,8 +36,6 @@ jobs:
             bash scripts/compile-page.sh $base_path $file_name
 
             if [[ $base_path == raw/posts* ]]; then
-              echo "here"
-            fi
               echo "adding $file to index"
               bash scripts/add-post-to-index.sh $file_name
             fi
