@@ -21,3 +21,13 @@ jobs:
           for file in ${{ steps.changed-files.outputs.added_files }}; do
             echo "$file was added"
           done
+
+      - run: |
+          for file in ${{ steps.changed-files.outputs.modified_files }}; do
+            echo "$file was modified"
+          done
+
+      - run: |
+          for file in ${{ steps.changed-files.outputs.deleted_files }}; do
+            echo "$file was deleted"
+          done
