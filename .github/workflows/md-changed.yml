@@ -11,11 +11,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v26.1
+        with:
+          since_last_remote_commit: true
 
       - name: Added files
         run: |
