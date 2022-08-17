@@ -76,6 +76,7 @@ jobs:
             if [[ $obase_path == raw/posts* ]]; then
               echo "removing $ofile_name from index"
               l=$(grep -Fn $ofile_name raw/index.md | cut -d':' -f1)
+              d=$(sed -n "${l}p" raw/index.md | cut -d'|' -f2)
               bash scripts/rm-post-from-index.sh $ofile_name
             fi
 
@@ -87,7 +88,7 @@ jobs:
 
             if [[ $nbase_path == raw/posts* ]]; then
               echo "adding $nfile_name to index"
-              bash scripts/add-post-to-index.sh $nfile_name ${l=3}
+              bash scripts/add-post-to-index.sh $nfile_name ${l=3} ${d=$(date +"%a %b %d %Y")}
             fi
           done
 
