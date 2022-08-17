@@ -19,6 +19,7 @@ jobs:
         uses: tj-actions/changed-files@v26.1
         with:
           since_last_remote_commit: true
+          include_all_old_new_renamed_files: true
           files: raw/**/*.md
 
       - name: Added files
@@ -37,4 +38,10 @@ jobs:
         run: |
           for file in ${{ steps.changed-files.outputs.deleted_files }}; do
             echo "$file was deleted"
+          done
+
+      - name: Renamed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_old_new_renamed_files }}; do
+            echo "$file was renamed"
           done
