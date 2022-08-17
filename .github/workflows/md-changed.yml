@@ -1,0 +1,15 @@
+name: md changed
+
+on:
+  push:
+    paths:
+      - '**.md'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: sh scripts/testing.sh added ${{ github.event.head_commit.added }}
+      - run: sh scripts/testing.sh removed ${{ github.event.head_commit.removed }}
+      - run: sh scripts/testing.sh modified ${{ github.event.head_commit.modified }}

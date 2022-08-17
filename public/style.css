@@ -1,0 +1,303 @@
+html {
+  font-size: 14px;
+}
+* {
+  box-sizing: border-box;
+  text-rendering: geometricPrecision;
+}
+body {
+  font-size: 1rem;
+  margin: 30px auto;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace, serif;
+  word-wrap: break-word;
+  background: #2d2d2d;
+  color: #cccccc;
+  max-width: 800px;
+}
+@media (max-width: 830px) {
+  body {
+    margin: 30px 15px;
+  }
+}
+::selection {
+  background: #999;
+  color: #fff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+  color: #66cccc;
+}
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+pre {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  overflow: auto;
+}
+code[class*='language-'],
+pre[class*='language-'],
+pre code {
+  font-weight: 100;
+  text-shadow: none;
+  margin: 20px 0 !important;
+}
+iframe {
+  max-width: 100%;
+}
+a {
+  cursor: pointer;
+  color: #99cc99;
+  text-decoration: none;
+}
+a:not([class*='footnote-']):before {
+  content: '[';
+}
+a:not([class*='footnote-']):after {
+  content: ']';
+}
+a[href^='http']:after {
+  content: '](\279A)';
+}
+a[class='footnote-back'] {
+  margin-left: 5px;
+}
+a:hover {
+  color: #bfebbf;
+  text-decoration: underline;
+}
+blockquote,
+code,
+em,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  font-size: 1rem;
+  font-style: normal;
+  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+    Bitstream Vera Sans Mono, Courier New, monospace, serif;
+}
+blockquote,
+code,
+em,
+strong {
+  line-height: 20px;
+}
+blockquote,
+code,
+footer,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+li,
+ol,
+p,
+section,
+ul {
+  float: none;
+  margin: 0;
+  padding: 0;
+}
+blockquote,
+h1,
+ol,
+p,
+ul {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  position: relative;
+  margin-bottom: 20px;
+}
+h1:before,
+h2:before,
+h3:before,
+h4:before,
+h5:before,
+h6:before {
+  display: inline;
+}
+h1 {
+  font-size: 24px;
+}
+h2 {
+  font-size: 20px;
+}
+h3 {
+  font-size: 17px;
+}
+h4 {
+  font-size: 15px;
+}
+h5 {
+  font-size: 13px;
+}
+h6 {
+  font-size: 11px;
+}
+h1:before {
+  content: '# ';
+}
+h2:before {
+  content: '## ';
+}
+h3:before {
+  content: '### ';
+}
+h4:before {
+  content: '#### ';
+}
+h5:before {
+  content: '##### ';
+}
+h6:before {
+  content: '###### ';
+}
+li {
+  position: relative;
+  display: block;
+  padding-left: 20px;
+  line-height: 20px;
+}
+li > p {
+  margin: 0;
+}
+li:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+ul > li:after {
+  content: '-';
+  color: #6699cc;
+}
+ol {
+  counter-reset: a;
+}
+ol > li:after {
+  color: #6699cc;
+  content: counter(a) '.';
+  counter-increment: a;
+}
+blockquote {
+  position: relative;
+  padding-left: 17px;
+  padding-left: 2ch;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+blockquote p:after {
+  content: '>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>';
+  white-space: pre;
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 20px;
+  color: #f2777a;
+}
+blockquote p {
+  margin: 0;
+}
+em {
+  color: #ffcc66;
+  font-style: italic;
+}
+em:after,
+em:before {
+  content: '*';
+  display: inline;
+}
+strong {
+  color: #f99157;
+  font-weight: bold;
+}
+strong:before,
+strong:after {
+  content: '**';
+  display: inline;
+}
+u {
+  color: #ffcc66;
+  text-decoration: underline;
+}
+u:before,
+u:after {
+  content: '_';
+  display: inline;
+}
+del {
+  color: #777;
+  text-decoration: line-through;
+}
+del:before,
+del:after {
+  content: '~~';
+  display: inline;
+}
+pre code:after,
+pre code:before {
+  display: none;
+}
+code {
+  color: #999;
+}
+code:after,
+code:before {
+  content: '`';
+  display: inline;
+}
+hr {
+  position: relative;
+  height: 20px;
+  overflow: hidden;
+  border: 0;
+  margin: 20px 0;
+  color: #999;
+}
+hr:after {
+  content: '---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------';
+  position: absolute;
+  top: 0;
+  left: 0;
+  line-height: 20px;
+  width: 100%;
+  word-wrap: break-word;
+}
+p {
+  margin: 0 0 20px;
+  line-height: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+table td,
+table th {
+  vertical-align: top;
+  border: 1px dashed #ccc;
+  line-height: 15px;
+  padding: 10px;
+  font-weight: normal;
+}
