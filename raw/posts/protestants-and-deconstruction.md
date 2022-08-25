@@ -1,0 +1,1 @@
+In evangelicalism, it's currently in vogue to critique the deconstructionist movement. This is odd coming from protestants, seeing as their whole thing is that they deconstructed catholic ideas and formed their own branch of christianity. It seems to me like deconstructing institutional thinking is the most truly protestant thing anyone could do.

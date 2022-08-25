@@ -1,0 +1,3 @@
+> We are vulnerable, but we don’t want to be reminded of that. We want to believe that the world is understandable and controllable and unthreatening, that if we follow the rules, we’ll be okay. So, when this kind of thing happens to other people, we need to put them in a different category from us. We don’t want to resemble them, and the fact that we might is too terrifying to deal with. So, they have to be monsters.[^1]
+
+[^1]: https://www.washingtonpost.com/lifestyle/magazine/fatal-distraction-forgetting-a-child-in-thebackseat-of-a-car-is-a-horrifying-mistake-is-it-a-crime/2014/06/16/8ae0fe3a-f580-11e3-a3a5-42be35962a52_story.html

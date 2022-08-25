@@ -1,0 +1,3 @@
+> Saying a trans woman is “not a woman” because of biology is like saying adoptive parents are “not really someone’s parents” because they are not blood relations of their children. It is fallacious, pure and simple. It assumes that the definition of the word “parents” is handed to us from on high, that there is some fixed rule in the universe prohibiting us from using it to refer to people who have a social rather than a biological relationship with their children.[^1]
+
+[^1]: https://www.currentaffairs.org/2022/06/what-is-a-woman-is-a-feature-length-exploration-of-conservative-ignorance-and-prejudice

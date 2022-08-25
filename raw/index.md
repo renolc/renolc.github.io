@@ -1,6 +1,6 @@
-|     |     |
-| --- | --- |
-| Thu Aug 25 2022 | [We Think Right](/posts/we-think-right) |
-| Wed Aug 17 2022 | [First Post](/posts/first-post) |
+|                |                                         |
+| -------------- | --------------------------------------- |
+| Mon Feb 7 2022 | [We Think Right](/posts/we-think-right) |
+| Fri Feb 4 2022 | [First Post](/posts/first-post)         |
 
 <!--  -->
