@@ -1,5 +1,6 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
+| Thu Aug 25 2022 | [God Already Loves Us](/posts/god-already-loves-us) |
 | Thu Aug 25 2022 | [Not A Woman](/posts/not-a-woman)                                       |
 | Wed Aug 24 2022 | [Set Aside](/posts/set-aside)                                           |
 | Wed May 25 2022 | [Worthwhile](/posts/worthwhile)                                         |
