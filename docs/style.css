@@ -219,6 +219,11 @@ blockquote p:after {
 blockquote p {
   margin: 0;
 }
+sup {
+  vertical-align: middle;
+  position: relative;
+  top: -5px;
+}
 em {
   color: #ffcc66;
   font-style: italic;
