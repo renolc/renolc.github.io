@@ -1,10 +1,10 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
-| Thu Aug 25 2022 | [God Already Loves Us](/posts/god-already-loves-us) |
 | Thu Aug 25 2022 | [Not A Woman](/posts/not-a-woman)                                       |
 | Wed Aug 24 2022 | [Set Aside](/posts/set-aside)                                           |
 | Wed May 25 2022 | [Worthwhile](/posts/worthwhile)                                         |
 | Sat May 7 2022  | [Acknowledge The Past](/posts/acknowledge-the-past)                     |
+| Mon Apr 25 2022 | [God Already Loves Us](/posts/god-already-loves-us)                     |
 | Sun Apr 24 2022 | [No Control](/posts/no-control)                                         |
 | Tue Apr 5 2022  | [Protestants And Deconstruction](/posts/protestants-and-deconstruction) |
 | Fri Mar 25 2022 | [Irrelevant American Worldview](/posts/irrelevant-american-worldview)   |
