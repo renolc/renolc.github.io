@@ -58,10 +58,14 @@ a {
   color: #99cc99;
   text-decoration: none;
 }
-a:not([class*='footnote-']):before {
+a[class='footnote-ref'] sup {
+  top: 0;
+  font-size: inherit;
+}
+a:not([class='footnote-back']):before {
   content: '[';
 }
-a:not([class*='footnote-']):after {
+a:not([class='footnote-back']):after {
   content: ']';
 }
 a[href^='http']:after {
@@ -199,6 +203,13 @@ ol > li:after {
   color: #6699cc;
   content: counter(a) '.';
   counter-increment: a;
+}
+ol > li[id*='fn'] {
+  padding-left: 3ch;
+}
+ol > li[id*='fn']:after {
+  content: '[' counter(a) ']';
+  margin-right: 1ch;
 }
 blockquote {
   position: relative;
