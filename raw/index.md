@@ -19,5 +19,3 @@
 | Wed Feb 9 2022  | [Propaganda](/posts/propaganda)                                         |
 | Tue Feb 8 2022  | [We Think Right](/posts/we-think-right)                                 |
 | Fri Feb 4 2022  | [First Post](/posts/first-post)                                         |
-
-<!--  -->
