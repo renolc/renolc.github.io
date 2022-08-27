@@ -27,7 +27,7 @@ jobs:
           files: raw/**/*.md
 
       - name: Compile pages
-        run: echo ${{ steps.changed-files.outputs }} | jq '@json' | ./handle_changes
+        run: ./handle_changes ${{ steps.changed-files.outputs.added_files }} ${{ steps.changed-files.outputs.modified_files }} ${{ steps.changed-files.outputs.deleted_files }}
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
