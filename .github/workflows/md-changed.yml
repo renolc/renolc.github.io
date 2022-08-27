@@ -14,10 +14,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install pandoc
-        uses: r-lib/actions/setup-pandoc@v1
-        with:
-          pandoc-version: '2.19'
+      # - name: Install pandoc
+      #   uses: r-lib/actions/setup-pandoc@v1
+      #   with:
+      #     pandoc-version: '2.19'
 
       - name: Get changed files
         id: changed-files
@@ -27,7 +27,7 @@ jobs:
           files: raw/**/*.md
 
       - name: Compile pages
-        run: ./handle_changes '${{ steps.changed-files.outputs }}'
+        run: jq '@json' ${{ steps.changed-files.outputs }} | ./handle_changes
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
