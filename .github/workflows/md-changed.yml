@@ -27,7 +27,7 @@ jobs:
           files: raw/**/*.md
 
       - name: Compile pages
-        run: handle_changes '${{ steps.changed-files.outputs.added_files }}'
+        run: ./handle_changes '${{ steps.changed-files.outputs.added_files }}'
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
