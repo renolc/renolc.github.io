@@ -12,8 +12,10 @@
   <body>
     <h1>Phillip Gibson</h1>
     <p>
-      <a href="/">home</a> * <a href="/about">about</a> *
-      <a href="mailto:hello@phillipgibson.me">contact</a>
+      <a href="/">home</a> *
+      <a href="/about">about</a> *
+      <a href="mailto:hello@phillipgibson.me">contact</a> *
+      <a href="/rss.xml">rss</a>
     </p>
     $body$
   </body>
