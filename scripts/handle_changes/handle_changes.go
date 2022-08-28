@@ -63,19 +63,19 @@ func addPage(path, file string) {
 	compilePage(path, file)
 
 	if isAPost(path) {
-		addToIndex(path, file, 2, time.Now().Format("Mon Jan 2 2006"))
-		addToRss(path, file, 5)
+		addToIndex(path, file, time.Now().Format("Mon Jan 2 2006"))
+		addToRss(path, file)
 	}
 }
 
-func addToIndex(path, file string, index int, date string) {
+func addToIndex(path, file, date string) {
 	println("adding", file, "to index")
 	link := getIndexTableLink(path, file)
 	line := fmt.Sprintf("| %s %s", date, link)
-	insertLineIntoFile(line, "raw/index.md", index)
+	insertLineIntoFile(line, "raw/index.md", 2)
 }
 
-func addToRss(path, file string, index int) {
+func addToRss(path, file string) {
 	println("adding", file, "to rss")
 	title := getTitleFromFile(file)
 	description, err := os.ReadFile(fmt.Sprintf("docs%s/%s.html", path[3:], file))
@@ -85,7 +85,7 @@ func addToRss(path, file string, index int) {
 
 	item := fmt.Sprintf("<item><title>%s</title>%s<description><![CDATA[%s]]></description></item>", title, getRssLinkTag(path, file), strings.ReplaceAll(string(description), "\n", ""))
 
-	insertLineIntoFile(item, "docs/rss.xml", index)
+	insertLineIntoFile(item, "docs/rss.xml", 5)
 }
 
 func insertLineIntoFile(line, file string, index int) {
