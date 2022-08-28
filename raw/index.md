@@ -1,5 +1,6 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
+| Sun Aug 28 2022 | [Not Of This World](/posts/not-of-this-world) |
 | Thu Aug 25 2022 | [Not A Woman](/posts/not-a-woman)                                       |
 | Wed Aug 24 2022 | [Set Aside](/posts/set-aside)                                           |
 | Wed May 25 2022 | [Worthwhile](/posts/worthwhile)                                         |
