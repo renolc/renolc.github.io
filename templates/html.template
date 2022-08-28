@@ -17,6 +17,8 @@
       <a href="mailto:hello@phillipgibson.me">contact</a> *
       <a href="/rss.xml">rss</a>
     </p>
+    <!-- body start -->
     $body$
+    <!-- body end -->
   </body>
 </html>

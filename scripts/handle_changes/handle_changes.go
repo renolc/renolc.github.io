@@ -83,9 +83,9 @@ func addToRss(path, file string) {
 		panic(err)
 	}
 
-	// truncate description to only the content between the <body> and </body> tags
-	description = []byte(strings.Split(string(description), "<body>")[1])
-	description = []byte(strings.Split(string(description), "</body>")[0])
+	// truncate description to only the body
+	description = []byte(strings.Split(string(description), "<!-- body start -->")[1])
+	description = []byte(strings.Split(string(description), "<!-- body end -->")[0])
 
 	// make the description a single line
 	description = []byte(strings.ReplaceAll(string(description), "\n", ""))
