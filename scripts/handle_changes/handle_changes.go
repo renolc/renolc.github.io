@@ -83,7 +83,14 @@ func addToRss(path, file string) {
 		panic(err)
 	}
 
-	item := fmt.Sprintf("<item><title>%s</title>%s<description><![CDATA[%s]]></description></item>", title, getRssLinkTag(path, file), strings.ReplaceAll(string(description), "\n", ""))
+	// truncate description to only the content between the <body> and </body> tags
+	description = []byte(strings.Split(string(description), "<body>")[1])
+	description = []byte(strings.Split(string(description), "</body>")[0])
+
+	// make the description a single line
+	description = []byte(strings.ReplaceAll(string(description), "\n", ""))
+
+	item := fmt.Sprintf("<item><title>%s</title>%s<description><![CDATA[%s]]></description></item>", title, getRssLinkTag(path, file), description)
 
 	insertLineIntoFile(item, "docs/rss.xml", 5)
 }
