@@ -227,7 +227,7 @@ blockquote p:after {
   line-height: 20px;
   color: #f2777a;
 }
-blockquote p {
+blockquote p:last-child {
   margin: 0;
 }
 sup {
