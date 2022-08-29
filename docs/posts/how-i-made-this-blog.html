@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.png" type="image/x-icon" />
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="/rss.xml">
+    <link rel="stylesheet" href="/style.css" />
+    <title>Phillip Gibson</title>
+  </head>
+  <body>
+    <h1>Phillip Gibson</h1>
+    <p>
+      <a href="/">home</a> *
+      <a href="/about">about</a> *
+      <a href="mailto:hello@phillipgibson.me">contact</a> *
+      <a href="/rss.xml">rss</a>
+    </p>
+    <!-- body start -->
+    <h2 id="how-i-made-this-blog">How I Made This Blog</h2>
+    <p>First, I will say that everything about how this blog is built
+    and works is on <a
+    href="https://github.com/renolc/renolc.github.io">GitHub</a>. If you
+    want to poke around and figure it out yourself, be my guest.</p>
+    <h3 id="collection">Collection</h3>
+    <p>I intend for this to be a multi-part blog series, where I will
+    take one part of the system and explain it as thoroughly as I can.
+    Below is a general outline of what I plan to write, but it is
+    subject to change. As I complete each part, I will update this
+    section to link to the posts.</p>
+    <p><a href="/posts/how-i-made-this-blog">Part 0 - High Level
+    Overview and Inspirations (you are here)</a><br />
+    Part 1 - GitHub Pages<br />
+    Part 2 - Compiling HTML from MD with Pandoc<br />
+    Part 3 - Markdown Styling<br />
+    Part 4 - GitHub Workflows<br />
+    Part 5 - Custom Scripts</p>
+    <h3 id="overview">Overview</h3>
+    <p>Let's start with a high level overview.</p>
+    <ol type="1">
+    <li>a markdown file is written into a <code>raw</code> folder</li>
+    <li>on a git push, a GitHub workflow takes over</li>
+    <li>the workflow compiles any markdown changes and places the
+    generated html files into a <code>docs</code> folder at the same
+    relative path</li>
+    <li>if the compiled markdown was with a <code>raw/posts</code>
+    folder, it is also prepended to the index table of posts, as well as
+    the RSS xml</li>
+    </ol>
+    <p>Each of those has multiple sub-steps and nuances, but that's the
+    gist of it.</p>
+    <h3 id="inspiration">Inspiration</h3>
+    <ul>
+    <li><a href="https://xeiaso.net/blog">https://xeiaso.net/blog</a> -
+    for the markdown styling</li>
+    <li><a href="https://blot.im/">https://blot.im/</a> - for the "drop
+    md here, receive html there" feature</li>
+    <li><a href="https://prose.sh/">https://prose.sh/</a> - similar md
+    -&gt; html as blot, but also for the super clean output</li>
+    <li><a href="https://macdown.uranusjr.com/">MacDown</a> - for the
+    Tomorrow+ css theme</li>
+    </ul>
+    <!-- body end -->
+  </body>
+</html>
