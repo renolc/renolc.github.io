@@ -87,6 +87,9 @@ func addToRss(path, file string) {
 	description = []byte(strings.Split(string(description), "<!-- body start -->")[1])
 	description = []byte(strings.Split(string(description), "<!-- body end -->")[0])
 
+	// make all relative urls absolute
+	description = []byte(strings.ReplaceAll(string(description), "href=\"/", "href=\"https://phillipgibson.me/"))
+
 	// make the description a single line
 	description = []byte(strings.ReplaceAll(string(description), "\n", ""))
 
