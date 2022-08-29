@@ -2,8 +2,10 @@ name: md changed
 
 on:
   push:
+    branches:
+      - main
     paths:
-      - '**.md'
+      - 'raw/**/*.md'
 
 jobs:
   handle-md-changes:
