@@ -20,7 +20,7 @@ Let's start with a high level overview.
 1. a markdown file is written into a `raw` folder
 2. on a git push, a GitHub workflow takes over
 3. the workflow compiles any markdown changes and places the generated html files into a `docs` folder at the same relative path
-4. if the compiled markdown was with a `raw/posts` folder, it is also prepended to the index table of posts, as well as the RSS xml
+4. if the compiled markdown was in the `raw/posts` folder, it is also prepended to the index table of posts, as well as the RSS xml
 
 Each of those has multiple sub-steps and nuances, but that's the gist of it.
 
