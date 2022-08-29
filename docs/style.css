@@ -61,6 +61,7 @@ a {
 a[class='footnote-ref'] sup {
   top: 0;
   font-size: inherit;
+  vertical-align: baseline;
 }
 a:not([class='footnote-back']):before {
   content: '[';
