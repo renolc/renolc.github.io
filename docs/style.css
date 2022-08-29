@@ -205,10 +205,10 @@ ol > li:after {
   counter-increment: a;
 }
 ol > li[id*='fn'] {
-  padding-left: 3ch;
+  padding-left: 4ch;
 }
 ol > li[id*='fn']:after {
-  content: '[' counter(a) ']';
+  content: '[' counter(a) ']:';
   margin-right: 1ch;
 }
 blockquote {
