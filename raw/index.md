@@ -1,5 +1,6 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
+| Wed Aug 31 2022 | [Crucifixion](/posts/crucifixion) |
 | Mon Aug 29 2022 | [How I Made This Blog](/posts/how-i-made-this-blog) |
 | Sun Aug 28 2022 | [Not Of This World](/posts/not-of-this-world) |
 | Thu Aug 25 2022 | [Not A Woman](/posts/not-a-woman)                                       |
