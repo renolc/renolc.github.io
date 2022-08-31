@@ -6,8 +6,8 @@ First, I will say that everything about how this blog is built and works is on [
 
 I intend for this to be a multi-part blog series, where I will take one part of the system and explain it as thoroughly as I can. Below is a general outline of what I plan to write, but it is subject to change. As I complete each part, I will update this section to link to the posts.
 
-[Part 0 - High Level Overview and Inspirations](/posts/how-i-made-this-blog) (you are here)
-Part 1 - GitHub Pages
+Part 0 - High Level Overview and Inspirations (you are here)
+[Part 1 - GitHub Pages](/posts/how-i-made-this-blog-1)
 Part 2 - Compiling HTML from MD with Pandoc
 Part 3 - Markdown Styling
 Part 4 - GitHub Workflows

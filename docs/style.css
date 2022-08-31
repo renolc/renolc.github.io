@@ -318,3 +318,6 @@ table th {
   padding: 10px;
   font-weight: normal;
 }
+video {
+  width: 100%;
+}
