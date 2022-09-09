@@ -65,7 +65,7 @@
     file</a> with my desired common header, put in a <code>$body$</code>
     tag for the dynamic content, and voila.</p>
     <pre><code>pandoc path/to/file.md \
-  --template templates/html.template # &lt;--
+  --template templates/html.template \ # &lt;--
   -f gfm+hard_line_breaks \
   -t html \
   -s \
