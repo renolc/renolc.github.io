@@ -49,7 +49,7 @@ I quickly threw together a [template file](https://github.com/renolc/renolc.gith
 
 ```
 pandoc path/to/file.md \
-  --template templates/html.template # <--
+  --template templates/html.template \ # <--
   -f gfm+hard_line_breaks \
   -t html \
   -s \
