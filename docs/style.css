@@ -39,9 +39,9 @@ fieldset {
   margin: 0;
 }
 pre {
-  background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px dashed #ccc;
   overflow: auto;
+  padding: 1ch 2ch;
 }
 code[class*='language-'],
 pre[class*='language-'],
@@ -78,6 +78,9 @@ a[class='footnote-back'] {
 a:hover {
   color: #bfebbf;
   text-decoration: underline;
+}
+a[href^='#cb'] {
+  display: none;
 }
 blockquote,
 code,

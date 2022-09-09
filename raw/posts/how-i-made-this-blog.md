@@ -8,7 +8,7 @@ I intend for this to be a multi-part blog series, where I will take one part of 
 
 Part 0 - High Level Overview and Inspirations (you are here)
 [Part 1 - GitHub Pages](/posts/how-i-made-this-blog-1)
-Part 2 - Compiling HTML from MD with Pandoc
+[Part 2 - Compiling HTML from MD with Pandoc](/posts/how-i-made-this-blog-2)
 Part 3 - Markdown Styling
 Part 4 - GitHub Workflows
 Part 5 - Custom Scripts

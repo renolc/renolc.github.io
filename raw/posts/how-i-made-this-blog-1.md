@@ -4,7 +4,7 @@
 
 [Part 0 - High Level Overview and Inspirations](/posts/how-i-made-this-blog)
 Part 1 - GitHub Pages (you are here)
-Part 2 - Compiling HTML from MD with Pandoc
+[Part 2 - Compiling HTML from MD with Pandoc](/posts/how-i-made-this-blog-2)
 Part 3 - Markdown Styling
 Part 4 - GitHub Workflows
 Part 5 - Custom Scripts
