@@ -1,5 +1,6 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
+| Fri Sep 9 2022 | [How I Made This Blog 2](/posts/how-i-made-this-blog-2) |
 | Mon Sep 5 2022 | [Unacquainted](/posts/unacquainted) |
 | Wed Aug 31 2022 | [How I Made This Blog 1](/posts/how-i-made-this-blog-1) |
 | Wed Aug 31 2022 | [Crucifixion](/posts/crucifixion) |
