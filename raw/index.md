@@ -1,10 +1,7 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
-| Fri Sep 9 2022 | [How I Made This Blog 2](/posts/how-i-made-this-blog-2) |
 | Mon Sep 5 2022 | [Unacquainted](/posts/unacquainted) |
-| Wed Aug 31 2022 | [How I Made This Blog 1](/posts/how-i-made-this-blog-1) |
 | Wed Aug 31 2022 | [Crucifixion](/posts/crucifixion) |
-| Mon Aug 29 2022 | [How I Made This Blog](/posts/how-i-made-this-blog) |
 | Sun Aug 28 2022 | [Not Of This World](/posts/not-of-this-world) |
 | Thu Aug 25 2022 | [Not A Woman](/posts/not-a-woman)                                       |
 | Wed Aug 24 2022 | [Set Aside](/posts/set-aside)                                           |
