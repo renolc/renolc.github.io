@@ -1,5 +1,6 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
+| Fri Nov 25 2022 | [Engineer Hubris](/posts/engineer-hubris) |
 | Mon Nov 21 2022 | [Prison Guards](/posts/prison-guards) |
 | Mon Sep 5 2022 | [Unacquainted](/posts/unacquainted) |
 | Wed Aug 31 2022 | [Crucifixion](/posts/crucifixion) |
