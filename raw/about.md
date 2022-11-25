@@ -12,7 +12,7 @@ hello@phillipgibson.me
 
 | place            | tech                                 | dates               |
 | ---------------- | ------------------------------------ | ------------------- |
-| [Articulate][]   | `node`, `react`, `postgres`          | Dec 2022 → present  |
+| [Articulate][]   |  | Dec 2022 → present  |
 | [Sticker Mule][] | `node`, `react`, `postgres`          | Jun 2018 → Nov 2022 |
 | [CrowdOx][]      | `rails`, `ember`, `postgres`         | Jul 2015 → Jun 2018 |
 | [Tabula Rasa][]  | `node`, `angular 1.x`, `couchdb`     | Aug 2015 → Jul 2017 |
