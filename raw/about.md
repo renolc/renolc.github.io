@@ -8,16 +8,33 @@ Any opinion expressed is my own.
 
 hello@phillipgibson.me
 
-### Work Experience
+### Tech I've Used
 
-| place            | tech                                 | dates               |
-| ---------------- | ------------------------------------ | ------------------- |
-| [Articulate][]   | `node`, `react`, `postgres`          | Dec 2022 → present  |
-| [Sticker Mule][] | `node`, `react`, `postgres`          | Jun 2018 → Nov 2022 |
-| [CrowdOx][]      | `rails`, `ember`, `postgres`         | Jul 2015 → Jun 2018 |
-| [Tabula Rasa][]  | `node`, `angular 1.x`, `couchdb`     | Aug 2015 → Jul 2017 |
-| [Spruce Media][] | `rails`, `ember`, `postgres`         | May 2014 → Jun 2015 |
-| [Blackbaud][]    | `vb.net`, `javascript`, `sql-server` | Aug 2011 → May 2014 |
+| tech              | experience |
+| ----------------- | ---------- |
+| JavaScript        | 10 years   |
+| Node              | 7 years    |
+| React             | 5 years    |
+| Postgres          | 5 years    |
+| TypeScript        | 4 years    |
+| Redis             | 2 years    |
+| Ruby on Rails[^1] | 2 years    |
+| Go[^2]            | 1 year     |
+| Swift[^2]         | < 1 year   |
+
+[^1]: not using this tech much anymore
+[^2]: actively learning
+
+### Places I've Worked
+
+| place            |
+| ---------------- |
+| [Articulate][]   |
+| [Blackbaud][]    |
+| [CrowdOx][]      |
+| [Spruce Media][] |
+| [Sticker Mule][] |
+| [Tabula Rasa][]  |
 
 [articulate]: https://articulate.com
 [sticker mule]: https://stickermule.com
@@ -25,16 +42,6 @@ hello@phillipgibson.me
 [tabula rasa]: https://tabularasahealthcare.com
 [spruce media]: https://pitchbook.com/profiles/company/55615-69#overview
 [blackbaud]: https://blackbaud.com
-
-### Notable Accomplishments
-
-- Helped launch [stimulus.com](https://stimulus.com), a new, experimental social media network.
-- Pioneered an internal marketing system to manage SMS and email subscriptions and campaigns.
-- Helped define and create software to automate jobs across fleets of industrial printers.
-- Presented at a local tech conference two years running. ([2016][] & [2017][])
-
-[2016]: https://syntaxcon.com/2016/session/almost-serverless-multiplayer-games-in-javascript/
-[2017]: https://syntaxcon.com/2017/session/cross-platform-game-development-with-haxe-and-openfl/
 
 ### Education
 
