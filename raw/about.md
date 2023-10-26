@@ -19,11 +19,11 @@ hello@phillipgibson.me
 | TypeScript        | 4 years    |
 | Redis             | 2 years    |
 | Ruby on Rails[^1] | 2 years    |
-| Go[^2]            | 1 year     |
-| Swift[^2]         | < 1 year   |
+| Go                | 1 year     |
+| Godot[^2]         | < 1 year   |
 
-[^1]: not using this tech much anymore
-[^2]: actively learning
+[^1]: not using this much anymore
+[^2]: my current obsession
 
 ### Places I've Worked
 
