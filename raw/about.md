@@ -12,11 +12,11 @@ hello@phillipgibson.me
 
 | tech              | experience |
 | ----------------- | ---------- |
-| JavaScript        | 10 years   |
-| Node              | 7 years    |
-| React             | 5 years    |
-| Postgres          | 5 years    |
-| TypeScript        | 4 years    |
+| JavaScript        | 11 years   |
+| Node              | 8 years    |
+| React             | 6 years    |
+| Postgres          | 6 years    |
+| TypeScript        | 5 years    |
 | Redis             | 2 years    |
 | Ruby on Rails[^1] | 2 years    |
 | Go                | 1 year     |
