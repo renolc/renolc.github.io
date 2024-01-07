@@ -1,5 +1,6 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
+| Sun Jan 7 2024 | [A Theology Of Rest](/posts/a-theology-of-rest) |
 | Sat Nov 11 2023 | [Committed To A Losing Argument](/posts/committed-to-a-losing-argument) |
 | Thu Nov 9 2023 | [Only Time Passing](/posts/only-time-passing) |
 | Thu Oct 26 2023 | [Paper Vs People](/posts/paper-vs-people) |
