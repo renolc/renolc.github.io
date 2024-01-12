@@ -63,12 +63,17 @@ func addPage(path, file string) {
 	compilePage(path, file)
 
 	if isAPost(path) {
-		addToIndex(path, file, time.Now().Format("Mon Jan 2 2006"))
+		addToIndex(path, file)
 		addToRss(path, file)
 	}
 }
 
-func addToIndex(path, file, date string) {
+func addToIndex(path, file string) {
+	tz, err := time.LoadLocation("America/New_York")
+	if err != nil {
+		panic(err)
+	}
+	date := time.Now().In(tz).Format("Mon Jan 2 2006")
 	println("adding", file, "to index")
 	link := getIndexTableLink(path, file)
 	line := fmt.Sprintf("| %s %s", date, link)
