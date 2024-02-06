@@ -1,5 +1,6 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
+| Tue Feb 6 2024 | [Pascals Wager Of Climate Change](/posts/pascals-wager-of-climate-change) |
 | Fri Jan 12 2024 | [Unwilling To Learn](/posts/unwilling-to-learn) |
 | Sun Jan 7 2024 | [A Theology Of Rest](/posts/a-theology-of-rest) |
 | Sat Nov 11 2023 | [Committed To A Losing Argument](/posts/committed-to-a-losing-argument) |
