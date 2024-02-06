@@ -209,7 +209,7 @@ ol > li:after {
   counter-increment: a;
 }
 ol > li[id*='fn'] {
-  padding-left: 4ch;
+  padding-left: 5ch;
 }
 ol > li[id*='fn']:after {
   content: '[' counter(a) ']:';
@@ -245,7 +245,7 @@ em {
 }
 em:after,
 em:before {
-  content: '*';
+  content: '_';
   display: inline;
 }
 strong {
@@ -254,7 +254,7 @@ strong {
 }
 strong:before,
 strong:after {
-  content: '**';
+  content: ' ** ';
   display: inline;
 }
 u {
