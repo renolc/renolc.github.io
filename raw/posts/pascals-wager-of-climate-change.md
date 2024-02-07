@@ -13,7 +13,7 @@ The christian perspective is the choice is clear -- you _must_ choose to believe
 
 I want to apply this same logic to another area that christians are... less consistent about:
 
-|                     | **climate change exists** | **climate change does not exists** |
+|                     | **climate change exists** | **climate change does not exist** |
 |---------------------|:-------------------------:|:----------------------------------:|
 | **we do something** | humanity is saved         | nothing changes                    |
 | **we do nothing**   | humanity dies             | nothing changes                    |
