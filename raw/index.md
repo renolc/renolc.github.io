@@ -1,5 +1,6 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
+| Sat Oct 12 2024 | [Is Your Candidate Christian?](/posts/is-your-candidate-christian?) |
 | Tue Feb 6 2024 | [Pascals Wager Of Climate Change](/posts/pascals-wager-of-climate-change) |
 | Fri Jan 12 2024 | [Unwilling To Learn](/posts/unwilling-to-learn) |
 | Sun Jan 7 2024 | [A Theology Of Rest](/posts/a-theology-of-rest) |
