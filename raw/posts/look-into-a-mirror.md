@@ -1,0 +1,3 @@
+> How did this happen? Who's to blame? Well, certainly, there are those who are more responsible than others, and they will be held accountable. But again, truth be told, if you're looking for the guilty, you need only look into a mirror. I know why you did it. I know you were afraid. Who wouldn't be? War, terror, disease. There were a myriad of problems which conspired to corrupt your reason and rob you of your common sense. Fear got the best of you, and in your panic you turned to the now high chancellor, Adam Sutler. He promised you order, he promised you peace, and all he demanded in return was your silent, obedient consent. [^1]
+
+[^1]: [V for Vendetta](https://en.m.wikipedia.org/wiki/V_for_Vendetta_(film))
