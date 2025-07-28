@@ -1,5 +1,6 @@
 |                 |                                                                         |
 | --------------- | ----------------------------------------------------------------------- |
+| Mon Jul 28 2025 | [Our Best Thoughts Are Often Heretical](/posts/our-best-thoughts-are-often-heretical) |
 | Tue Jul 8 2025 | [The Foreigner Among You](/posts/the-foreigner-among-you) |
 | Fri Nov 29 2024 | [Good At Asking Questions](/posts/good-at-asking-questions) |
 | Mon Nov 11 2024 | [Look Into A Mirror](/posts/look-into-a-mirror) |
