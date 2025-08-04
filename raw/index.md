@@ -1,38 +1,37 @@
-|                 |                                                                         |
-| --------------- | ----------------------------------------------------------------------- |
+|                 |                                                                                       |
+| --------------- | ------------------------------------------------------------------------------------- |
 | Mon Jul 28 2025 | [Our Best Thoughts Are Often Heretical](/posts/our-best-thoughts-are-often-heretical) |
-| Tue Jul 8 2025 | [The Foreigner Among You](/posts/the-foreigner-among-you) |
-| Fri Nov 29 2024 | [Good At Asking Questions](/posts/good-at-asking-questions) |
-| Mon Nov 11 2024 | [Look Into A Mirror](/posts/look-into-a-mirror) |
-| Sat Oct 12 2024 | [Is Your Candidate Christian?](/posts/is-your-candidate-christian?) |
-| Tue Feb 6 2024 | [Pascals Wager Of Climate Change](/posts/pascals-wager-of-climate-change) |
-| Fri Jan 12 2024 | [Unwilling To Learn](/posts/unwilling-to-learn) |
-| Sun Jan 7 2024 | [A Theology Of Rest](/posts/a-theology-of-rest) |
-| Sat Nov 11 2023 | [Committed To A Losing Argument](/posts/committed-to-a-losing-argument) |
-| Thu Nov 9 2023 | [Only Time Passing](/posts/only-time-passing) |
-| Thu Oct 26 2023 | [Paper Vs People](/posts/paper-vs-people) |
-| Tue Mar 14 2023 | [Certainty Is A Feeling](/posts/certainty-is-a-feeling) |
-| Fri Nov 25 2022 | [Engineer Hubris](/posts/engineer-hubris) |
-| Mon Nov 21 2022 | [Prison Guards](/posts/prison-guards) |
-| Mon Sep 5 2022 | [Unacquainted](/posts/unacquainted) |
-| Wed Aug 31 2022 | [Crucifixion](/posts/crucifixion) |
-| Sun Aug 28 2022 | [Not Of This World](/posts/not-of-this-world) |
-| Thu Aug 25 2022 | [Not A Woman](/posts/not-a-woman)                                       |
-| Wed Aug 24 2022 | [Set Aside](/posts/set-aside)                                           |
-| Wed May 25 2022 | [Worthwhile](/posts/worthwhile)                                         |
-| Sat May 7 2022  | [Acknowledge The Past](/posts/acknowledge-the-past)                     |
-| Mon Apr 25 2022 | [God Already Loves Us](/posts/god-already-loves-us)                     |
-| Sun Apr 24 2022 | [No Control](/posts/no-control)                                         |
-| Tue Apr 5 2022  | [Protestants And Deconstruction](/posts/protestants-and-deconstruction) |
-| Fri Mar 25 2022 | [Irrelevant American Worldview](/posts/irrelevant-american-worldview)   |
-| Thu Mar 3 2022  | [Spiritual Leader Dance](/posts/spiritual-leader-dance)                 |
-| Wed Mar 2 2022  | [Tear Them Down](/posts/tear-them-down)                                 |
-| Fri Feb 25 2022 | [Support Ukraine](/posts/support-ukraine)                               |
-| Sun Feb 20 2022 | [Sacrifice](/posts/sacrifice)                                           |
-| Fri Feb 18 2022 | [Growth](/posts/growth)                                                 |
-| Thu Feb 17 2022 | [Middle Finger](/posts/middle-finger)                                   |
-| Thu Feb 10 2022 | [They Must Be Monsters](/posts/they-must-be-monsters)                   |
-| Wed Feb 9 2022  | [Nazi Votes](/posts/nazi-votes)                                         |
-| Wed Feb 9 2022  | [Propaganda](/posts/propaganda)                                         |
-| Tue Feb 8 2022  | [We Think Right](/posts/we-think-right)                                 |
-| Fri Feb 4 2022  | [First Post](/posts/first-post)                                         |
+| Tue Jul 8 2025  | [The Foreigner Among You](/posts/the-foreigner-among-you)                             |
+| Fri Nov 29 2024 | [Good At Asking Questions](/posts/good-at-asking-questions)                           |
+| Mon Nov 11 2024 | [Look Into A Mirror](/posts/look-into-a-mirror)                                       |
+| Tue Feb 6 2024  | [Pascals Wager Of Climate Change](/posts/pascals-wager-of-climate-change)             |
+| Fri Jan 12 2024 | [Unwilling To Learn](/posts/unwilling-to-learn)                                       |
+| Sun Jan 7 2024  | [A Theology Of Rest](/posts/a-theology-of-rest)                                       |
+| Sat Nov 11 2023 | [Committed To A Losing Argument](/posts/committed-to-a-losing-argument)               |
+| Thu Nov 9 2023  | [Only Time Passing](/posts/only-time-passing)                                         |
+| Thu Oct 26 2023 | [Paper Vs People](/posts/paper-vs-people)                                             |
+| Tue Mar 14 2023 | [Certainty Is A Feeling](/posts/certainty-is-a-feeling)                               |
+| Fri Nov 25 2022 | [Engineer Hubris](/posts/engineer-hubris)                                             |
+| Mon Nov 21 2022 | [Prison Guards](/posts/prison-guards)                                                 |
+| Mon Sep 5 2022  | [Unacquainted](/posts/unacquainted)                                                   |
+| Wed Aug 31 2022 | [Crucifixion](/posts/crucifixion)                                                     |
+| Sun Aug 28 2022 | [Not Of This World](/posts/not-of-this-world)                                         |
+| Thu Aug 25 2022 | [Not A Woman](/posts/not-a-woman)                                                     |
+| Wed Aug 24 2022 | [Set Aside](/posts/set-aside)                                                         |
+| Wed May 25 2022 | [Worthwhile](/posts/worthwhile)                                                       |
+| Sat May 7 2022  | [Acknowledge The Past](/posts/acknowledge-the-past)                                   |
+| Mon Apr 25 2022 | [God Already Loves Us](/posts/god-already-loves-us)                                   |
+| Sun Apr 24 2022 | [No Control](/posts/no-control)                                                       |
+| Tue Apr 5 2022  | [Protestants And Deconstruction](/posts/protestants-and-deconstruction)               |
+| Fri Mar 25 2022 | [Irrelevant American Worldview](/posts/irrelevant-american-worldview)                 |
+| Thu Mar 3 2022  | [Spiritual Leader Dance](/posts/spiritual-leader-dance)                               |
+| Wed Mar 2 2022  | [Tear Them Down](/posts/tear-them-down)                                               |
+| Fri Feb 25 2022 | [Support Ukraine](/posts/support-ukraine)                                             |
+| Sun Feb 20 2022 | [Sacrifice](/posts/sacrifice)                                                         |
+| Fri Feb 18 2022 | [Growth](/posts/growth)                                                               |
+| Thu Feb 17 2022 | [Middle Finger](/posts/middle-finger)                                                 |
+| Thu Feb 10 2022 | [They Must Be Monsters](/posts/they-must-be-monsters)                                 |
+| Wed Feb 9 2022  | [Nazi Votes](/posts/nazi-votes)                                                       |
+| Wed Feb 9 2022  | [Propaganda](/posts/propaganda)                                                       |
+| Tue Feb 8 2022  | [We Think Right](/posts/we-think-right)                                               |
+| Fri Feb 4 2022  | [First Post](/posts/first-post)                                                       |
