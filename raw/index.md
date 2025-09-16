@@ -1,5 +1,6 @@
 |                 |                                                                                       |
 | --------------- | ------------------------------------------------------------------------------------- |
+| Tue Sep 16 2025 | [Live By The Sword Die By The Sword](/posts/live-by-the-sword-die-by-the-sword) |
 | Mon Sep 1 2025 | [Religious People](/posts/religious-people) |
 | Mon Jul 28 2025 | [Our Best Thoughts Are Often Heretical](/posts/our-best-thoughts-are-often-heretical) |
 | Tue Jul 8 2025  | [The Foreigner Among You](/posts/the-foreigner-among-you)                             |
